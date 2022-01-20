@@ -21,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
         }
         -ms-overflow-style: none;
         scrollbar-width: none;
+        word-break: keep-all;
     }
     button {
         background: none;
