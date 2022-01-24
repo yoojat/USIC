@@ -102,6 +102,7 @@ const SideMenuItem = styled.div`
 `;
 
 export default function NavBar() {
+  const router = useRouter();
   const [isSideMenuShow, setIsSideMenuShow] = useState(false);
   const handleResize = () => {
     if (window.innerWidth > mediaSize.tablet) {
@@ -113,6 +114,20 @@ export default function NavBar() {
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      setIsSideMenuShow(false);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method:
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
     };
   }, []);
 
@@ -142,7 +157,7 @@ export default function NavBar() {
         </ImageContainer>
         <MenuContainer>
           <Link href='/about'>회사소개</Link>
-          <Link href='/about'>제공서비스</Link>
+          <Link href='/services'>제공서비스</Link>
           <Link href='/about'>요금안내</Link>
           <Link href='/about'>계약프로세스</Link>
         </MenuContainer>
@@ -151,7 +166,9 @@ export default function NavBar() {
             <Link href={'/about'}>
               <SideMenuItem>회사소개</SideMenuItem>
             </Link>
-            <SideMenuItem>제공서비스</SideMenuItem>
+            <Link href={'/services'}>
+              <SideMenuItem>제공서비스</SideMenuItem>
+            </Link>
             <SideMenuItem>요금안내</SideMenuItem>
             <SideMenuItem>계약프로세스</SideMenuItem>
           </SideMenuNavContainer>
