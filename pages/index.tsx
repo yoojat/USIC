@@ -1,36 +1,15 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import styled from 'styled-components';
-import Seo from '../components/Seo';
+import HeadSection from '../components/HeadSection';
 import {
   PaperIcon,
   PhoneIcon,
   ProcessingIcon,
   ReportIcon,
   SolutionIcon,
-} from '../components/svg';
+} from '../components/Svg';
 import { media } from '../styles/theme';
-
-const BannerContainer = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 600px;
-  overflow: hidden;
-`;
-
-const BannerImageContainer = styled.div`
-  position: relative;
-  width: 100%;
-  min-width: 900px;
-  height: 600px;
-  img {
-    ${media.tablet} {
-      transform: translateX(-10%);
-    }
-  }
-  background-image: url('/banner.jpg');
-  background-size: cover;
-`;
 
 const ContentWrapper = styled.div`
   position: absolute;
@@ -230,10 +209,7 @@ const ContractItemTitle = styled.div`
 const Home: NextPage = () => {
   return (
     <>
-      <Seo title='홈' />
-      <BannerContainer>
-        <BannerImageContainer></BannerImageContainer>
-      </BannerContainer>
+      <HeadSection title='홈' isMain={true} />
       <ContentWrapper>
         <ContentContainer>
           <TitleContainer>

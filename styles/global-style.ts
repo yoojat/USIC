@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     ::-webkit-scrollbar {
         display: none;
     }
+
+
+
+
     html{
         font-size: 11px;
         -webkit-text-size-adjust: none;

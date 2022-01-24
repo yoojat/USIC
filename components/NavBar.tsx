@@ -22,10 +22,11 @@ const NavContainer = styled.nav`
   padding: 20px;
   max-width: 1200px;
   z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 `;
 
 const ImageContainer = styled.div`
-  width: 150px;
+  width: 100px;
   position: relative;
 `;
 const MenuContainer = styled.div`
@@ -35,11 +36,15 @@ const MenuContainer = styled.div`
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
+
+  color: white;
+  text-shadow: 1px 1px 5px black;
   a {
     padding: 15px;
 
     &:hover {
-      color: ${(props) => props.theme.color.thirdBlue};
+      color: #594be4;
+      text-shadow: none;
     }
   }
 `;
@@ -97,7 +102,6 @@ const SideMenuItem = styled.div`
 `;
 
 export default function NavBar() {
-  const router = useRouter();
   const [isSideMenuShow, setIsSideMenuShow] = useState(false);
   const handleResize = () => {
     if (window.innerWidth > mediaSize.tablet) {
@@ -122,7 +126,7 @@ export default function NavBar() {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '120px',
+                  height: '70px',
                 }}
               >
                 <Image
@@ -137,14 +141,16 @@ export default function NavBar() {
           </Link>
         </ImageContainer>
         <MenuContainer>
-          <Link href='/'>회사소개</Link>
+          <Link href='/about'>회사소개</Link>
           <Link href='/about'>제공서비스</Link>
           <Link href='/about'>요금안내</Link>
           <Link href='/about'>계약프로세스</Link>
         </MenuContainer>
         <SideMenuContainer isSideMenuShow={isSideMenuShow}>
           <SideMenuNavContainer>
-            <SideMenuItem>회사소개</SideMenuItem>
+            <Link href={'/about'}>
+              <SideMenuItem>회사소개</SideMenuItem>
+            </Link>
             <SideMenuItem>제공서비스</SideMenuItem>
             <SideMenuItem>요금안내</SideMenuItem>
             <SideMenuItem>계약프로세스</SideMenuItem>
