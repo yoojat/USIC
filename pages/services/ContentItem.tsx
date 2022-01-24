@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const ContentItemWrapper = styled.div`
   text-align: center;
-  background-color: ${(props) => props.them};
 `;
 const ContentItemTitle = styled.div`
   background-color: ${(props) => props.theme.color.blue};

@@ -181,7 +181,7 @@ export default function NavBar() {
             <Link href={'/about'}>
               <SideMenuItem>회사소개</SideMenuItem>
             </Link>
-            <Link href={'/services/kiosk'}>
+            <Link href={'/services/program'}>
               <SideMenuItem>제공서비스</SideMenuItem>
             </Link>
             <SideMenuItem>요금안내</SideMenuItem>

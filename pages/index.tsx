@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import styled from 'styled-components';
+import ContentLayout from '../components/ContentLayout';
 import HeadSection from '../components/HeadSection';
 import {
   PaperIcon,
@@ -12,7 +13,7 @@ import {
 import { media } from '../styles/theme';
 
 const ContentWrapper = styled.div`
-  position: absolute;
+  /* position: absolute; */
   margin-top: 150px;
   width: 100%;
   display: flex;
@@ -209,159 +210,168 @@ const ContractItemTitle = styled.div`
 const Home: NextPage = () => {
   return (
     <>
-      <HeadSection title='홈' isMain={true} />
-      <ContentWrapper>
-        <ContentContainer>
-          <TitleContainer>
-            <Title>
-              관리도 얼마든지
-              <br />
-              자유로워질 수 있습니다.
-            </Title>
-            <SubTitle></SubTitle>
-          </TitleContainer>
-          <CountContainer>
-            <CountItem>
-              <CountTitle>누적 채널 응대 건수</CountTitle>
-              <CountContent>300</CountContent>
-            </CountItem>
-            <CountItem>
-              <CountTitle>누적 전화 건수</CountTitle>
-              <CountContent>300</CountContent>
-            </CountItem>
-            <CountItem>
-              <CountTitle>누적 시스템 결제 건수</CountTitle>
-              <CountContent>300</CountContent>
-            </CountItem>
-          </CountContainer>
-          <TryExperienceButtonContainer>
-            <TryExperienceButton>15일 무료 체험</TryExperienceButton>
-          </TryExperienceButtonContainer>
-        </ContentContainer>
-        <ContentContainer>
-          <ContentTitle>
-            독서실, 스터디카페
-            <span style={{ color: '#3A8BC2' }}> 관리대행</span>이 필요하신가요?
-          </ContentTitle>
-          <IntroducingContentContainer>
-            <IntroducingContentItem>
-              <IntroudcingIconContainer>
-                <img src='/time.svg' />
-              </IntroudcingIconContainer>
-              <IntroducingItemContent>
-                <IntroducingItemTitle>시간적자유</IntroducingItemTitle>
-                <IntroducingItemSubtitle>
-                  독서실/스터디카페 전문 상담원을 통해, 관리 부담 최소화 기능
-                </IntroducingItemSubtitle>
-              </IntroducingItemContent>
-            </IntroducingContentItem>
-            <IntroducingContentItem>
-              <IntroudcingIconContainer>
-                <img src='/man.svg' />
-              </IntroudcingIconContainer>
-              <IntroducingItemContent>
-                <IntroducingItemTitle>
-                  퀄리티 높은 전문 상담원
-                </IntroducingItemTitle>
-                <IntroducingItemSubtitle>
-                  독서실/스터디카페 전문 상담원을 통해, 관리 부담 최소화 기능
-                </IntroducingItemSubtitle>
-              </IntroducingItemContent>
-            </IntroducingContentItem>
-            <IntroducingContentItem>
-              <IntroudcingIconContainer>
-                <img src='/money.svg' />
-              </IntroudcingIconContainer>
-              <IntroducingItemContent>
-                <IntroducingItemTitle>합리적인 가격</IntroducingItemTitle>
-                <IntroducingItemSubtitle>
-                  서비스 발생 건수에 따른 합리적 인가격 제시
-                </IntroducingItemSubtitle>
-              </IntroducingItemContent>
-            </IntroducingContentItem>
-            <IntroducingContentItem>
-              <IntroudcingIconContainer>
-                <img src='/maintain.svg' />
-              </IntroudcingIconContainer>
-              <IntroducingItemContent>
-                <IntroducingItemTitle>
-                  지속적인 서비스 개발
-                </IntroducingItemTitle>
-                <IntroducingItemSubtitle>
-                  동종 업계 최고의 관리/응대 전문가를 통한 현장 서비스 및
-                  독서실/스터디카페 시스템 전문 개발자를 통한 자체 시스템 보유
-                </IntroducingItemSubtitle>
-              </IntroducingItemContent>
-            </IntroducingContentItem>
-          </IntroducingContentContainer>
-        </ContentContainer>
-        <MiddleBanner>
-          <MiddleBannerTitle>
-            무인공간통합센터의 <span>전 직원</span>은<br />
-            <span>다양한 관리 솔루션 활용</span>이 가능합니다.
-          </MiddleBannerTitle>
-          <MiddleBannerSubTitle>
-            응대/관리, 회원관리, 매출관리, 좌석관리, 출입/통제 시스템,
-            <br /> 키오스크 , 온라인 서비스
-          </MiddleBannerSubTitle>
-        </MiddleBanner>
-        <ContentContainer>
+      {/* <HeadSection title='홈' isMain={true} /> */}
+      <ContentLayout
+        title='홈'
+        isMain={true}
+        headTitle={`관리도 얼마든지 자유로워질 수 있습니다.`}
+      >
+        <ContentWrapper>
           <ContentContainer>
-            <ContractTitle>
-              <span>계약</span> 프로세스
-            </ContractTitle>
-            <ContractContent>
-              <ContractItem>
-                <ContractItemCircle>
-                  <ContractItemIndex>step01</ContractItemIndex>
-                  <ContractItemIcon>
-                    <PhoneIcon />
-                  </ContractItemIcon>
-                </ContractItemCircle>
-                <ContractItemTitle>전화 상담 & 고객정보확인</ContractItemTitle>
-              </ContractItem>
-              <ContractItem>
-                <ContractItemCircle>
-                  <ContractItemIndex>step02</ContractItemIndex>
-                  <ContractItemIcon>
-                    <PaperIcon />
-                  </ContractItemIcon>
-                </ContractItemCircle>
-                <ContractItemTitle>기초 컨설팅</ContractItemTitle>
-              </ContractItem>
-              <ContractItem>
-                <ContractItemCircle>
-                  <ContractItemIndex>step03</ContractItemIndex>
-                  <ContractItemIcon>
-                    <SolutionIcon />
-                  </ContractItemIcon>
-                </ContractItemCircle>
-                <ContractItemTitle>솔루션 제시</ContractItemTitle>
-              </ContractItem>
-              <ContractItem>
-                <ContractItemCircle>
-                  <ContractItemIndex>step04</ContractItemIndex>
-                  <ContractItemIcon>
-                    <ProcessingIcon />
-                  </ContractItemIcon>
-                </ContractItemCircle>
-                <ContractItemTitle>계약 진행</ContractItemTitle>
-              </ContractItem>
-              <ContractItem>
-                <ContractItemCircle>
-                  <ContractItemIndex>step05</ContractItemIndex>
-                  <ContractItemIcon>
-                    <ReportIcon />
-                  </ContractItemIcon>
-                </ContractItemCircle>
-                <ContractItemTitle>
-                  업무시작 & 일간 리포트 제출
-                </ContractItemTitle>
-              </ContractItem>
-            </ContractContent>
+            <TitleContainer>
+              <Title>
+                관리도 얼마든지
+                <br />
+                자유로워질 수 있습니다.
+              </Title>
+              <SubTitle></SubTitle>
+            </TitleContainer>
+            <CountContainer>
+              <CountItem>
+                <CountTitle>누적 채널 응대 건수</CountTitle>
+                <CountContent>300</CountContent>
+              </CountItem>
+              <CountItem>
+                <CountTitle>누적 전화 건수</CountTitle>
+                <CountContent>300</CountContent>
+              </CountItem>
+              <CountItem>
+                <CountTitle>누적 시스템 결제 건수</CountTitle>
+                <CountContent>300</CountContent>
+              </CountItem>
+            </CountContainer>
+            <TryExperienceButtonContainer>
+              <TryExperienceButton>15일 무료 체험</TryExperienceButton>
+            </TryExperienceButtonContainer>
           </ContentContainer>
-        </ContentContainer>
-      </ContentWrapper>
+          <ContentContainer>
+            <ContentTitle>
+              독서실, 스터디카페
+              <span style={{ color: '#3A8BC2' }}> 관리대행</span>이
+              필요하신가요?
+            </ContentTitle>
+            <IntroducingContentContainer>
+              <IntroducingContentItem>
+                <IntroudcingIconContainer>
+                  <img src='/time.svg' />
+                </IntroudcingIconContainer>
+                <IntroducingItemContent>
+                  <IntroducingItemTitle>시간적자유</IntroducingItemTitle>
+                  <IntroducingItemSubtitle>
+                    독서실/스터디카페 전문 상담원을 통해, 관리 부담 최소화 기능
+                  </IntroducingItemSubtitle>
+                </IntroducingItemContent>
+              </IntroducingContentItem>
+              <IntroducingContentItem>
+                <IntroudcingIconContainer>
+                  <img src='/man.svg' />
+                </IntroudcingIconContainer>
+                <IntroducingItemContent>
+                  <IntroducingItemTitle>
+                    퀄리티 높은 전문 상담원
+                  </IntroducingItemTitle>
+                  <IntroducingItemSubtitle>
+                    독서실/스터디카페 전문 상담원을 통해, 관리 부담 최소화 기능
+                  </IntroducingItemSubtitle>
+                </IntroducingItemContent>
+              </IntroducingContentItem>
+              <IntroducingContentItem>
+                <IntroudcingIconContainer>
+                  <img src='/money.svg' />
+                </IntroudcingIconContainer>
+                <IntroducingItemContent>
+                  <IntroducingItemTitle>합리적인 가격</IntroducingItemTitle>
+                  <IntroducingItemSubtitle>
+                    서비스 발생 건수에 따른 합리적 인가격 제시
+                  </IntroducingItemSubtitle>
+                </IntroducingItemContent>
+              </IntroducingContentItem>
+              <IntroducingContentItem>
+                <IntroudcingIconContainer>
+                  <img src='/maintain.svg' />
+                </IntroudcingIconContainer>
+                <IntroducingItemContent>
+                  <IntroducingItemTitle>
+                    지속적인 서비스 개발
+                  </IntroducingItemTitle>
+                  <IntroducingItemSubtitle>
+                    동종 업계 최고의 관리/응대 전문가를 통한 현장 서비스 및
+                    독서실/스터디카페 시스템 전문 개발자를 통한 자체 시스템 보유
+                  </IntroducingItemSubtitle>
+                </IntroducingItemContent>
+              </IntroducingContentItem>
+            </IntroducingContentContainer>
+          </ContentContainer>
+          <MiddleBanner>
+            <MiddleBannerTitle>
+              무인공간통합센터의 <span>전 직원</span>은<br />
+              <span>다양한 관리 솔루션 활용</span>이 가능합니다.
+            </MiddleBannerTitle>
+            <MiddleBannerSubTitle>
+              응대/관리, 회원관리, 매출관리, 좌석관리, 출입/통제 시스템,
+              <br /> 키오스크 , 온라인 서비스
+            </MiddleBannerSubTitle>
+          </MiddleBanner>
+          <ContentContainer>
+            <ContentContainer>
+              <ContractTitle>
+                <span>계약</span> 프로세스
+              </ContractTitle>
+              <ContractContent>
+                <ContractItem>
+                  <ContractItemCircle>
+                    <ContractItemIndex>step01</ContractItemIndex>
+                    <ContractItemIcon>
+                      <PhoneIcon />
+                    </ContractItemIcon>
+                  </ContractItemCircle>
+                  <ContractItemTitle>
+                    전화 상담 & 고객정보확인
+                  </ContractItemTitle>
+                </ContractItem>
+                <ContractItem>
+                  <ContractItemCircle>
+                    <ContractItemIndex>step02</ContractItemIndex>
+                    <ContractItemIcon>
+                      <PaperIcon />
+                    </ContractItemIcon>
+                  </ContractItemCircle>
+                  <ContractItemTitle>기초 컨설팅</ContractItemTitle>
+                </ContractItem>
+                <ContractItem>
+                  <ContractItemCircle>
+                    <ContractItemIndex>step03</ContractItemIndex>
+                    <ContractItemIcon>
+                      <SolutionIcon />
+                    </ContractItemIcon>
+                  </ContractItemCircle>
+                  <ContractItemTitle>솔루션 제시</ContractItemTitle>
+                </ContractItem>
+                <ContractItem>
+                  <ContractItemCircle>
+                    <ContractItemIndex>step04</ContractItemIndex>
+                    <ContractItemIcon>
+                      <ProcessingIcon />
+                    </ContractItemIcon>
+                  </ContractItemCircle>
+                  <ContractItemTitle>계약 진행</ContractItemTitle>
+                </ContractItem>
+                <ContractItem>
+                  <ContractItemCircle>
+                    <ContractItemIndex>step05</ContractItemIndex>
+                    <ContractItemIcon>
+                      <ReportIcon />
+                    </ContractItemIcon>
+                  </ContractItemCircle>
+                  <ContractItemTitle>
+                    업무시작 & 일간 리포트 제출
+                  </ContractItemTitle>
+                </ContractItem>
+              </ContractContent>
+            </ContentContainer>
+          </ContentContainer>
+        </ContentWrapper>
+      </ContentLayout>
     </>
   );
 };

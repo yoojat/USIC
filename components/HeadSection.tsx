@@ -71,6 +71,15 @@ const HeadTitle = styled.h3`
   animation-name: TitleAppear;
 `;
 
+const BigHeadTitle = styled.h1`
+  font-size: 46px;
+  font-weight: 700;
+  color: white;
+  padding: 50px;
+  line-height: 1.2;
+  text-shadow: 3px 3px 5px black;
+`;
+
 const SubMenuContainer = styled.div`
   position: absolute;
   width: 100%;
@@ -118,7 +127,12 @@ export default function HeadSection({
       </Head>
       <BannerContainer>
         <BannerImageContainer bannerImgUrl={bannerImgUrl} isMain={isMain}>
-          {headTitle && <HeadTitle>{headTitle}</HeadTitle>}
+          {headTitle &&
+            (isMain ? (
+              <BigHeadTitle>{headTitle}</BigHeadTitle>
+            ) : (
+              <HeadTitle>{headTitle}</HeadTitle>
+            ))}
         </BannerImageContainer>
         {subMenus && (
           <SubMenuContainer>

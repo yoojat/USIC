@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import HeadSection from '../components/HeadSection';
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.div<{ isMain?: boolean }>`
   /* position: absolute; */
-  padding-top: 400px;
+  padding-top: ${(props) => (props.isMain ? '200px' : '400px')};
   width: 100%;
   display: flex;
   justify-content: center;
@@ -40,7 +40,7 @@ const ContentLayout = ({
         headTitle={headTitle}
         subMenus={subMenus}
       />
-      <ContentWrapper>{children}</ContentWrapper>
+      <ContentWrapper isMain={isMain}>{children}</ContentWrapper>
     </div>
   );
 };
