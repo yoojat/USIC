@@ -75,19 +75,21 @@ const SubMenuContainer = styled.div`
   position: absolute;
   width: 100%;
   top: 280px;
+  text-align: center;
 `;
 const SubMenu = styled.div`
   text-align: center;
+  display: inline-block;
 `;
 
 const SubMenuItem = styled.div`
   background-color: white;
-  display: inline-block;
   width: 150px;
   padding: 20px;
   font-size: 17px;
   font-weight: 600;
   box-shadow: 3px 3px 5px #dedede;
+  display: inline-block;
   &:hover {
     color: ${(props) => props.theme.color.purple};
   }
@@ -99,7 +101,7 @@ interface IProps {
   isMain?: boolean;
   bannerImgUrl?: string;
   headTitle?: string;
-  subMenus?: [{ title: string; path: string }];
+  subMenus?: { title: string; path: string }[];
 }
 
 export default function HeadSection({
@@ -120,8 +122,8 @@ export default function HeadSection({
         </BannerImageContainer>
         {subMenus && (
           <SubMenuContainer>
-            {subMenus.map((subMenu) => (
-              <SubMenu>
+            {subMenus.map((subMenu, index) => (
+              <SubMenu key={index}>
                 <SubMenuItem>{subMenu.title}</SubMenuItem>
               </SubMenu>
             ))}

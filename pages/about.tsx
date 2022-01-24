@@ -11,19 +11,6 @@ const ContentWrapper = styled.div`
   flex-direction: column;
 `;
 
-const SubMenu = styled.div`
-  text-align: center;
-`;
-
-const SubMenuItem = styled.div`
-  background-color: white;
-  display: inline-block;
-  padding: 20px;
-  font-size: 17px;
-  font-weight: 600;
-  box-shadow: 3px 3px 5px #dedede;
-`;
-
 const MainContentContainer = styled.div`
   padding: 30px;
   box-sizing: border-box;
@@ -128,6 +115,10 @@ export default function About() {
                   <ul>
                     <li>블루닷라운지 독서실 4호점 부산 해운대구 반여동 오픈</li>
                     <li>블루닷라운지 독서실 5호점 부산 동래구 명륜동 오픈</li>
+                    <li>블루닷라운지 독서실 6호점 부산 금정구 구서동 오픈</li>
+                    <li>블루닷라운지 독서실 7호점 울산 남구 수암동 오픈</li>
+                    <li>블루닷라운지 독서실 8호점 양산 중부동 오픈</li>
+                    <li>블루닷라운지 독서실 9호점 부산 수영구 망미동 오픈</li>
                     <li>가맹 위탁 운영 시작</li>
                   </ul>
                 </YearContent>
@@ -136,9 +127,9 @@ export default function About() {
                 <YearTitle>2020년</YearTitle>
                 <YearContent>
                   <ul>
-                    <li>블루닷라운지 독서실 9호점 부사 북구 화명동 오픈</li>
-                    <li>블루닷라운지 독서실 10호점 부산 금정구 구서동 오픈</li>
-                    <li>블루닷라운지 독서실 11호점 양산 물금동 오픈</li>
+                    <li>블루닷라운지 독서실 10호점 부산 북구 화명동 오픈</li>
+                    <li>블루닷라운지 독서실 11호점 부산 금정구 구서동 오픈</li>
+                    <li>블루닷라운지 독서실 12호점 양산 물금동 오픈</li>
                   </ul>
                 </YearContent>
               </YearItem>
@@ -148,9 +139,9 @@ export default function About() {
                 <YearContent>
                   <ul>
                     <li>키오스크 개발 완료 및 키오스크 기반 운영 시작</li>
-                    <li>블루닷라운지 독서실 12호점 울산 삼산동 오픈</li>
                     <li>블루닷라운지 독서실 13호점 부산 정관 오픈</li>
-                    <li>블루닷라운지 독서실 14호점 부산 사직 오픈</li>
+                    <li>블루닷라운지 독서실 14호점 울산 삼산동 오픈</li>
+                    <li>블루닷라운지 독서실 15호점 부산 사직동 오픈</li>
                     <li>무인공간통합센터 개시 및 시범 운영</li>
                     <li>원격 통합 운영 관리 서비스 진행</li>
                   </ul>

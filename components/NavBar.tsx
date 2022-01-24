@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { media, mediaSize } from '../styles/theme';
 import { useEffect, useState } from 'react';
+import firstPathFinder from '../utils/firstPathfinder';
 
 const Wrapper = styled.div`
   display: flex;
@@ -38,15 +39,18 @@ const MenuContainer = styled.div`
   letter-spacing: 0.02em;
 
   color: white;
-  text-shadow: 1px 1px 5px black;
   a {
     padding: 15px;
-
-    &:hover {
-      color: #594be4;
-      text-shadow: none;
-    }
   }
+`;
+
+const MenuTitle = styled.span<{ isNowPage?: boolean }>`
+  &:hover {
+    color: #594be4;
+    text-shadow: none;
+  }
+  color: ${(props) => (props.isNowPage ? props.theme.color.purple : 'inherit')};
+  text-shadow: ${(props) => (props.isNowPage ? 'none' : '1px 1px 5px black')};
 `;
 
 const MenuBarContainer = styled.div`
@@ -103,6 +107,7 @@ const SideMenuItem = styled.div`
 
 export default function NavBar() {
   const router = useRouter();
+
   const [isSideMenuShow, setIsSideMenuShow] = useState(false);
   const handleResize = () => {
     if (window.innerWidth > mediaSize.tablet) {
@@ -146,7 +151,7 @@ export default function NavBar() {
               >
                 <Image
                   src={'/logo.png'}
-                  alt={'Website In Busan'}
+                  alt={'무인공간통합센터'}
                   layout='fill'
                   objectFit='cover'
                   priority={true}
@@ -156,17 +161,27 @@ export default function NavBar() {
           </Link>
         </ImageContainer>
         <MenuContainer>
-          <Link href='/about'>회사소개</Link>
-          <Link href='/services'>제공서비스</Link>
-          <Link href='/about'>요금안내</Link>
-          <Link href='/about'>계약프로세스</Link>
+          <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'about'}>
+            <Link href='/about'>회사소개</Link>
+          </MenuTitle>
+          <MenuTitle
+            isNowPage={firstPathFinder(router.pathname) === 'services'}
+          >
+            <Link href='/services/program'>제공서비스</Link>
+          </MenuTitle>
+          <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'price'}>
+            <Link href='/about'>요금안내</Link>
+          </MenuTitle>
+          <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'process'}>
+            <Link href='/about'>계약프로세스</Link>
+          </MenuTitle>
         </MenuContainer>
         <SideMenuContainer isSideMenuShow={isSideMenuShow}>
           <SideMenuNavContainer>
             <Link href={'/about'}>
               <SideMenuItem>회사소개</SideMenuItem>
             </Link>
-            <Link href={'/services'}>
+            <Link href={'/services/kiosk'}>
               <SideMenuItem>제공서비스</SideMenuItem>
             </Link>
             <SideMenuItem>요금안내</SideMenuItem>
