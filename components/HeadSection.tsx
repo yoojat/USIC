@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { media } from '../styles/theme';
 
@@ -137,9 +138,11 @@ export default function HeadSection({
         {subMenus && (
           <SubMenuContainer>
             {subMenus.map((subMenu, index) => (
-              <SubMenu key={index}>
-                <SubMenuItem>{subMenu.title}</SubMenuItem>
-              </SubMenu>
+              <Link key={index} href={subMenu.path}>
+                <SubMenu>
+                  <SubMenuItem>{subMenu.title}</SubMenuItem>
+                </SubMenu>
+              </Link>
             ))}
           </SubMenuContainer>
         )}

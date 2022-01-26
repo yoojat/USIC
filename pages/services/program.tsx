@@ -28,8 +28,8 @@ export default function Program() {
         bannerImgUrl='/banner3.jpg'
         headTitle='제공서비스'
         subMenus={[
-          { title: '통합운영관리프로그램', path: '/' },
-          { title: '키오스크', path: '/' },
+          { title: '통합운영관리프로그램', path: '/services/program' },
+          { title: '키오스크', path: '/services/kiosk' },
         ]}
       >
         <TopSmallTitle>독서실·스터디카페 사업자를 위한</TopSmallTitle>
