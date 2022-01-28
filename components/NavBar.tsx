@@ -163,7 +163,7 @@ export default function NavBar() {
         </ImageContainer>
         <MenuContainer>
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'about'}>
-            <Link href='/about'>USIC 소개</Link>
+            <Link href='/about/usic'>USIC 소개</Link>
           </MenuTitle>
           <MenuTitle
             isNowPage={firstPathFinder(router.pathname) === 'services'}
@@ -185,7 +185,7 @@ export default function NavBar() {
         </MenuContainer>
         <SideMenuContainer isSideMenuShow={isSideMenuShow}>
           <SideMenuNavContainer>
-            <Link href={'/about'}>
+            <Link href={'/about/usic'}>
               <SideMenuItem>USIC 소개</SideMenuItem>
             </Link>
             <Link href={'/services/program'}>

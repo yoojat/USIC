@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { media } from '../styles/theme';
 
-const BannerContainer = styled.div`
+const BannerContainer = styled.div<{ isMain?: boolean }>`
   position: absolute;
   width: 100%;
-  height: 800px;
+  height: ${(props) => (props.isMain ? '800px' : '400px')};
   overflow: hidden;
 `;
 
@@ -75,7 +76,8 @@ const HeadTitle = styled.h3`
 
 const MainTitleContainer = styled.div`
   padding: 50px;
-
+  width: 100%;
+  max-width: 1200px;
   ${media.pc} {
     margin-left: 30px;
     position: absolute;
@@ -123,25 +125,33 @@ const SubMenuContainer = styled.div`
   position: absolute;
   width: 100%;
   top: 280px;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 const SubMenu = styled.div`
   text-align: center;
   display: inline-block;
 `;
 
-const SubMenuItem = styled.div`
+const SubMenuItem = styled.div<{ isNowPage?: boolean }>`
   background-color: white;
-  width: 150px;
-  padding: 20px;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   box-shadow: 3px 3px 5px #dedede;
   display: inline-block;
+  color: ${(props) => (props.isNowPage ? props.theme.color.aBlue : 'inheirt')};
   &:hover {
-    color: ${(props) => props.theme.color.purple};
+    color: ${(props) => props.theme.color.aBlue};
   }
   cursor: pointer;
+  /* padding: 10px; */
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
 `;
 
 interface IProps {
@@ -161,12 +171,14 @@ export default function HeadSection({
   subMenus,
   topDescription,
 }: IProps) {
+  const router = useRouter();
+
   return (
     <>
       <Head>
         <title>{title} | 무인공간통합센터</title>
       </Head>
-      <BannerContainer>
+      <BannerContainer isMain={isMain}>
         <BannerImageContainer bannerImgUrl={bannerImgUrl} isMain={isMain}>
           {headTitle &&
             (isMain ? (
@@ -197,7 +209,9 @@ export default function HeadSection({
             {subMenus.map((subMenu, index) => (
               <Link key={index} href={subMenu.path}>
                 <SubMenu>
-                  <SubMenuItem>{subMenu.title}</SubMenuItem>
+                  <SubMenuItem isNowPage={subMenu.path === router.route}>
+                    {subMenu.title}
+                  </SubMenuItem>
                 </SubMenu>
               </Link>
             ))}
