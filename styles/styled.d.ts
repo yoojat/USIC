@@ -14,6 +14,7 @@ declare module 'styled-components' {
       green: '#07b495';
       lightGreen: '#99ecdd';
       darkGray: '#54595d';
+      aBlue: 'rgb(0, 172, 199)';
     };
     boxShadow: {
       normal: '0 3px 8px 0 rgb(0 0 0 / 10%)';

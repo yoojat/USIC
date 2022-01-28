@@ -25,7 +25,7 @@ const Footer: NextComponentType = () => {
             alt={'logo'}
           />
         </div>
-        <div style={{ paddingBottom: '5px' }}>
+        <div style={{ paddingBottom: '10px', marginLeft: '10px' }}>
           무인공간통합센터 | 부산광역시 북구 양달로 4번길 11
         </div>
       </FooterContentContainer>

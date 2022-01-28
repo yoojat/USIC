@@ -46,14 +46,15 @@ const MenuContainer = styled.div`
 
 const MenuTitle = styled.span<{ isNowPage?: boolean }>`
   &:hover {
-    color: #594be4;
+    color: ${(props) => props.theme.color.aBlue};
     text-shadow: none;
   }
-  color: ${(props) => (props.isNowPage ? props.theme.color.purple : 'inherit')};
+  color: ${(props) => (props.isNowPage ? props.theme.color.aBlue : 'inherit')};
   text-shadow: ${(props) => (props.isNowPage ? 'none' : '1px 1px 5px black')};
 `;
 
 const MenuBarContainer = styled.div`
+  display: none;
   ${media.pc} {
     display: none;
   }
@@ -73,7 +74,7 @@ const MenuBarContainer = styled.div`
 `;
 
 const SideMenuContainer = styled.div<{ isSideMenuShow: boolean }>`
-  background-color: ${(props) => props.theme.color.fifthBlue};
+  background-color: ${(props) => props.theme.color.aBlue};
   left: ${(props) => (props.isSideMenuShow ? 0 : '-100%')};
   opacity: ${(props) => (props.isSideMenuShow ? 1 : 0)};
   top: 0;
@@ -153,7 +154,7 @@ export default function NavBar() {
                   src={'/logo.png'}
                   alt={'무인공간통합센터'}
                   layout='fill'
-                  objectFit='cover'
+                  objectFit='contain'
                   priority={true}
                 />
               </div>
@@ -162,7 +163,7 @@ export default function NavBar() {
         </ImageContainer>
         <MenuContainer>
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'about'}>
-            <Link href='/about'>회사소개</Link>
+            <Link href='/about'>USIC 소개</Link>
           </MenuTitle>
           <MenuTitle
             isNowPage={firstPathFinder(router.pathname) === 'services'}
@@ -170,22 +171,30 @@ export default function NavBar() {
             <Link href='/services/program'>제공서비스</Link>
           </MenuTitle>
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'price'}>
-            <Link href='/about'>요금안내</Link>
+            <Link href='/about'>칼럼</Link>
           </MenuTitle>
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'process'}>
-            <Link href='/about'>계약프로세스</Link>
+            <Link href='/about'>상담신청</Link>
+          </MenuTitle>
+          <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'process'}>
+            <Link href='/about'>후기</Link>
+          </MenuTitle>
+          <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'process'}>
+            <Link href='/about'>문의</Link>
           </MenuTitle>
         </MenuContainer>
         <SideMenuContainer isSideMenuShow={isSideMenuShow}>
           <SideMenuNavContainer>
             <Link href={'/about'}>
-              <SideMenuItem>회사소개</SideMenuItem>
+              <SideMenuItem>USIC 소개</SideMenuItem>
             </Link>
             <Link href={'/services/program'}>
               <SideMenuItem>제공서비스</SideMenuItem>
             </Link>
-            <SideMenuItem>요금안내</SideMenuItem>
-            <SideMenuItem>계약프로세스</SideMenuItem>
+            <SideMenuItem>칼럼</SideMenuItem>
+            <SideMenuItem>상담신청</SideMenuItem>
+            <SideMenuItem>후기</SideMenuItem>
+            <SideMenuItem>문의</SideMenuItem>
           </SideMenuNavContainer>
         </SideMenuContainer>
         <MenuBarContainer onClick={() => setIsSideMenuShow((prev) => !prev)}>

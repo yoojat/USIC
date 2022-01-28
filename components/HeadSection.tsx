@@ -6,7 +6,7 @@ import { media } from '../styles/theme';
 const BannerContainer = styled.div`
   position: absolute;
   width: 100%;
-  height: 600px;
+  height: 800px;
   overflow: hidden;
 `;
 
@@ -44,8 +44,9 @@ const BannerImageContainer = styled.div<{
   ${(props) =>
     props.bannerImgUrl
       ? `background-image: url(${props.bannerImgUrl})`
-      : `background-image: url(/banner.jpg)`};
+      : `background: rgba(0,0,0,0.5) url(/banner.jpg)`};
   background-size: cover;
+  background-blend-mode: darken;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,13 +73,50 @@ const HeadTitle = styled.h3`
   animation-name: TitleAppear;
 `;
 
-const BigHeadTitle = styled.h1`
-  font-size: 46px;
-  font-weight: 700;
-  color: white;
+const MainTitleContainer = styled.div`
   padding: 50px;
-  line-height: 1.2;
-  text-shadow: 3px 3px 5px black;
+
+  ${media.pc} {
+    margin-left: 30px;
+    position: absolute;
+    left: 10%;
+    top: 20%;
+  }
+  ${media.tablet} {
+    width: 100%;
+    top: inherit;
+    margin-left: inherit;
+    position: inherit;
+    left: inherit;
+  }
+`;
+
+const TopDescription = styled.div`
+  color: ${(props) => props.theme.color.aBlue};
+  font-size: 12px;
+  font-weight: 500;
+  padding-bottom: 10px;
+`;
+
+const BottomDescription = styled.div`
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 20px;
+  color: white;
+  p {
+    padding-top: 10px;
+  }
+`;
+
+const BigHeadTitle = styled.h1`
+  ${media.pc} {
+    width: 300px;
+  }
+  font-size: 34px;
+  font-weight: 400;
+  color: white;
+  line-height: 1.3;
+  width: 100%;
 `;
 
 const SubMenuContainer = styled.div`
@@ -112,6 +150,7 @@ interface IProps {
   bannerImgUrl?: string;
   headTitle?: string;
   subMenus?: { title: string; path: string }[];
+  topDescription?: string;
 }
 
 export default function HeadSection({
@@ -120,6 +159,7 @@ export default function HeadSection({
   isMain = false,
   headTitle,
   subMenus,
+  topDescription,
 }: IProps) {
   return (
     <>
@@ -130,7 +170,24 @@ export default function HeadSection({
         <BannerImageContainer bannerImgUrl={bannerImgUrl} isMain={isMain}>
           {headTitle &&
             (isMain ? (
-              <BigHeadTitle>{headTitle}</BigHeadTitle>
+              <MainTitleContainer>
+                <TopDescription>
+                  스터디카페, 독서실 창업 / 운영 / 관리 상담
+                </TopDescription>
+                <BigHeadTitle>{headTitle}</BigHeadTitle>
+                <BottomDescription>
+                  <p>이제 스터디카페, 독서실의 거품이 빠질 때가 되었습니다.</p>
+                  <p>
+                    저희가 제공하는 칼럼을 읽어보시지도 않고, <br />
+                    상담을 신청하는 분들은 거절 합니다.
+                  </p>
+                  <p>
+                    이곳을 찾는 많은 분들이
+                    <br />
+                    후기와 무료 칼럼만으로 성공하실 수 있습니다.
+                  </p>
+                </BottomDescription>
+              </MainTitleContainer>
             ) : (
               <HeadTitle>{headTitle}</HeadTitle>
             ))}

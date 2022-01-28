@@ -60,7 +60,7 @@ const CountTitle = styled.div`
 `;
 const CountContent = styled.div`
   text-align: center;
-  color: #594be4;
+  color: ${(props) => props.theme.color.aBlue};
   font-weight: 700;
   font-size: 60px;
   padding: 10px;
@@ -69,7 +69,7 @@ const TryExperienceButtonContainer = styled.div`
   text-align: center;
 `;
 const TryExperienceButton = styled.button`
-  background-color: #594be4;
+  background-color: ${(props) => props.theme.color.aBlue};
   color: white;
   padding: 15px 30px;
   font-size: 20px;
@@ -228,11 +228,11 @@ const Home: NextPage = () => {
             </TitleContainer>
             <CountContainer>
               <CountItem>
-                <CountTitle>누적 채널 응대 건수</CountTitle>
+                <CountTitle>컨설팅 상담건수</CountTitle>
                 <CountContent>300</CountContent>
               </CountItem>
               <CountItem>
-                <CountTitle>누적 전화 건수</CountTitle>
+                <CountTitle>누적 응대 건수</CountTitle>
                 <CountContent>300</CountContent>
               </CountItem>
               <CountItem>
@@ -241,13 +241,13 @@ const Home: NextPage = () => {
               </CountItem>
             </CountContainer>
             <TryExperienceButtonContainer>
-              <TryExperienceButton>15일 무료 체험</TryExperienceButton>
+              <TryExperienceButton>USIC 컬럼 바로가기</TryExperienceButton>
             </TryExperienceButtonContainer>
           </ContentContainer>
-          <ContentContainer>
+          {/* <ContentContainer>
             <ContentTitle>
               독서실, 스터디카페
-              <span style={{ color: '#3A8BC2' }}> 관리대행</span>이
+              <span style={{ color: 'rgb(0, 172, 199)' }}> 관리대행</span>이
               필요하신가요?
             </ContentTitle>
             <IntroducingContentContainer>
@@ -369,7 +369,7 @@ const Home: NextPage = () => {
                 </ContractItem>
               </ContractContent>
             </ContentContainer>
-          </ContentContainer>
+          </ContentContainer> */}
         </ContentWrapper>
       </ContentLayout>
     </>
