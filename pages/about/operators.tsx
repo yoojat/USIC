@@ -1,7 +1,10 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import styled from 'styled-components';
 import HeadSection from '../../components/HeadSection';
 import { media } from '../../styles/theme';
+import ArrowIcon from './ArrowIcon';
+import operators from './consts';
 
 const ContentWrapper = styled.div`
   /* position: absolute; */
@@ -20,15 +23,25 @@ const MainContentContainer = styled.div`
   width: 100%;
   max-width: 1200px;
   display: flex;
-  align-items: flex-start;
   margin-top: 100px;
+  ${media.tablet} {
+    flex-direction: column;
+    margin-top: 70px;
+  }
+  align-items: flex-start;
 `;
 
 const OperatorListContainer = styled.div`
   flex: 1;
   margin-right: 4vw;
+  ${media.tablet} {
+    margin-right: inherit;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 `;
-const OperatorList = styled.div`
+const OperatorList = styled.div<{ isNowOperator: boolean }>`
   text-align: center;
   width: 240px;
   padding: 30px 10px;
@@ -40,13 +53,43 @@ const OperatorList = styled.div`
   }
   border: 1px solid rgb(225, 225, 225);
 
+  background-color: ${(props) =>
+    props.isNowOperator ? props.theme.color.aBlue : 'inherit'};
+  color: ${(props) => (props.isNowOperator ? 'white' : 'inherit')};
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    margin-right: 10px;
+  }
+  ${media.tablet} {
+    display: inline-block;
+    width: inherit;
+    padding: 10px 10px;
+    font-size: 12px;
+    background-color: ${(props) =>
+      props.isNowOperator ? props.theme.color.aBlue : '#d7d7d7'};
+    color: ${(props) => (props.isNowOperator ? 'white' : 'inherit')};
+    svg {
+      display: none;
+    }
+  }
+
   span {
     font-size: 24px;
     margin-right: 8px;
+    ${media.tablet} {
+      font-size: 12px;
+    }
   }
 `;
 const OperatorContent = styled.div`
   flex: 4;
+  ${media.tablet} {
+    flex: inherit;
+    margin-top: 30px;
+  }
 `;
 
 const OperatorTitle = styled.h2`
@@ -66,6 +109,7 @@ const OperatorSubtitle = styled.div`
   padding-bottom: 20px;
   border-bottom: 1px solid ${(props) => props.theme.color.aBlue};
   font-weight: 400;
+  line-height: 1.4;
 `;
 
 const OperatorContext = styled.div`
@@ -82,6 +126,7 @@ const OperatorContext = styled.div`
 `;
 
 export default function Operators() {
+  const [nowOperator, setNowOperator] = useState('송병근');
   return (
     <div>
       <HeadSection
@@ -96,41 +141,55 @@ export default function Operators() {
       <ContentWrapper>
         <MainContentContainer>
           <OperatorListContainer>
-            <OperatorList>
+            <OperatorList
+              isNowOperator={nowOperator === '송병근'}
+              onClick={() => setNowOperator('송병근')}
+            >
+              <ArrowIcon
+                color={nowOperator === '송병근' ? '#fff' : '#00acc7'}
+              />
               <span>송병근</span> 운영자
             </OperatorList>
-            <OperatorList>
+            <OperatorList
+              isNowOperator={nowOperator === '김진완'}
+              onClick={() => setNowOperator('김진완')}
+            >
+              <ArrowIcon
+                color={nowOperator === '김진완' ? '#fff' : '#00acc7'}
+              />
               <span>김진완</span> 운영자
             </OperatorList>
-            <OperatorList>
+            <OperatorList
+              isNowOperator={nowOperator === '천홍범'}
+              onClick={() => setNowOperator('천홍범')}
+            >
+              <ArrowIcon
+                color={nowOperator === '천홍범' ? '#fff' : '#00acc7'}
+              />
               <span>천홍범</span> 운영자
             </OperatorList>
-            <OperatorList>
+            <OperatorList
+              isNowOperator={nowOperator === '김태영'}
+              onClick={() => setNowOperator('김태영')}
+            >
+              <ArrowIcon
+                color={nowOperator === '김태영' ? '#fff' : '#00acc7'}
+              />
               <span>김태영</span> 운영자
             </OperatorList>
           </OperatorListContainer>
           <OperatorContent>
             <OperatorTitle>
-              <span>송병근</span> 운영자
+              <span>{operators.get(nowOperator).name}</span> 운영자
             </OperatorTitle>
             <OperatorSubtitle>
-              생각을 실행으로 행하는 공간창업가
+              {operators.get(nowOperator).subtitle}
             </OperatorSubtitle>
-            <OperatorContext>
-              <p>
-                수차례 창업을 통해 겪게된 경험들은, 송병근 운영자만의 특별함을
-                느낄수 있는 가치가 되었습니다. 20개가 넘는 공간을 성공적으로
-                창업하며, 그에 쌓인 노하우는 많은 이들에게 큰 도움이 되었습니다.
-              </p>
-              <p>
-                경험을 통해 쌓인 안목과 직관은, 매번 놓인 문제에 대한 최선의
-                해결책을 제시해 줍니다.
-              </p>
-              <p>
-                머릿속 고민과 상상력을 행동으로 실천하는 능력이 탁월합니다.
-                또한, 언제나 문제 해결에 초점을 맞춰 본질을 흐트리지 않습니다.
-              </p>
-            </OperatorContext>
+            <OperatorContext
+              dangerouslySetInnerHTML={{
+                __html: operators.get(nowOperator).context,
+              }}
+            ></OperatorContext>
           </OperatorContent>
         </MainContentContainer>
       </ContentWrapper>
