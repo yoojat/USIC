@@ -84,7 +84,7 @@ const Home: NextPage = () => {
       <ContentLayout
         title='홈'
         isMain={true}
-        headTitle={`관리도 얼마든지 자유로워질 수 있습니다.`}
+        headTitle={`이제 스터디카페, 독서실의 거품이 빠질 때가 되었습니다.`}
       >
         <ContentWrapper>
           <ContentContainer>

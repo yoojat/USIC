@@ -112,7 +112,10 @@ const BottomDescription = styled.div`
 
 const BigHeadTitle = styled.h1`
   ${media.pc} {
-    width: 300px;
+    width: 400px;
+  }
+  ${media.tablet} {
+    width: inherit;
   }
   font-size: 34px;
   font-weight: 400;
@@ -188,7 +191,6 @@ export default function HeadSection({
                 </TopDescription>
                 <BigHeadTitle>{headTitle}</BigHeadTitle>
                 <BottomDescription>
-                  <p>이제 스터디카페, 독서실의 거품이 빠질 때가 되었습니다.</p>
                   <p>
                     저희가 제공하는 칼럼을 읽어보시지도 않고, <br />
                     상담을 신청하는 분들은 거절 합니다.
