@@ -170,8 +170,8 @@ export default function NavBar() {
           >
             <Link href='/services/program'>제공서비스</Link>
           </MenuTitle>
-          <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'price'}>
-            <Link href='/about'>칼럼</Link>
+          <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'column'}>
+            <Link href='/column'>칼럼</Link>
           </MenuTitle>
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'process'}>
             <Link href='/about'>상담신청</Link>
@@ -191,7 +191,9 @@ export default function NavBar() {
             <Link href={'/services/program'}>
               <SideMenuItem>제공서비스</SideMenuItem>
             </Link>
-            <SideMenuItem>칼럼</SideMenuItem>
+            <Link href={'/column'}>
+              <SideMenuItem>칼럼</SideMenuItem>
+            </Link>
             <SideMenuItem>상담신청</SideMenuItem>
             <SideMenuItem>후기</SideMenuItem>
             <SideMenuItem>문의</SideMenuItem>

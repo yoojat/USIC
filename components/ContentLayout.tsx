@@ -32,7 +32,7 @@ const ContentLayout = ({
   children,
 }: IProps) => {
   return (
-    <div>
+    <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
       <HeadSection
         title={title}
         isMain={isMain}
