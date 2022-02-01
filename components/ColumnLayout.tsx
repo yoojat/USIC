@@ -82,7 +82,7 @@ const ColumnLayout = ({ children }: IProps) => {
                     <MenuItem>처음 오신 분을 위한 칼럼</MenuItem>
                   </a>
                 </Link>
-                <Link href='/column/columns'>
+                <Link href='/column/columns/1'>
                   <MenuItem>재회 칼럼</MenuItem>
                 </Link>
                 <MenuItem>내담자 전용 칼럼</MenuItem>
