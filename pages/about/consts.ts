@@ -1,4 +1,4 @@
-const operators = new Map();
+export const operators = new Map();
 operators.set('송병근', {
   name: '송병근',
   subtitle: '생각을 실행으로 행하는 공간 창업가',
