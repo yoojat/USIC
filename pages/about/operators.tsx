@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import HeadSection from '../../components/HeadSection';
 import { media } from '../../styles/theme';
 import ArrowIcon from './ArrowIcon';
-import operators from './consts';
+import operators from '../../utils/consts';
 
 const ContentWrapper = styled.div`
   /* position: absolute; */
