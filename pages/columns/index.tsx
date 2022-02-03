@@ -1,9 +1,9 @@
 import { gql } from '@apollo/client';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { client } from '../../../apollo';
-import ColumnLayout from '../../../components/ColumnLayout';
-import { getFormatDate } from '../../../utils/getFormatDate';
+import { client } from '../../apollo';
+import ColumnLayout from '../../components/ColumnLayout';
+import { getFormatDate } from '../../utils/getFormatDate';
 
 const maxColumnsPerPage = 7;
 
@@ -103,7 +103,15 @@ const Columns = ({ posts, postsConnection, pageInfo }: IProps) => {
         <ul>
           {[...Array(pageCounts)].map((_, index) => (
             <li>
-              <Link href={`/column/columns/${index + 1}`}>
+              <Link
+                href={{
+                  pathname: `/columns`,
+                  query: {
+                    page: index + 1,
+                  },
+                }}
+                as='/columns'
+              >
                 <a>{index + 1}</a>
               </Link>
             </li>

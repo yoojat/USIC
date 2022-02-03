@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
 import ContentLayout from './ContentLayout';
@@ -22,13 +23,14 @@ const ContentContainer = styled.div`
 const MenuContainer = styled.div`
   border-bottom: 1px solid rgb(215, 215, 215);
 `;
-const Menu = styled.div`
+const Menu = styled.div<{ isNowPage?: boolean }>`
   display: flex;
   justify-content: flex-start;
 `;
-const MenuItem = styled.div`
+const MenuItem = styled.div<{ isNowPage?: boolean }>`
   font-size: 22px;
-  color: rgb(110, 110, 110);
+  color: ${(props) =>
+    props.isNowPage ? props.theme.color.aBlue : 'rgb(110,110,110)'};
   padding: 20px;
   cursor: pointer;
   box-sizing: content-box;
@@ -42,6 +44,8 @@ const MenuItem = styled.div`
     height: 3px;
     bottom: -1px;
     transition: all 0.5s ease 0s;
+    background-color: ${(props) =>
+      props.isNowPage ? props.theme.color.aBlue : 'inherit'};
   }
   &:hover {
     color: ${(props) => props.theme.color.aBlue};
@@ -65,6 +69,7 @@ interface IProps {
 }
 
 const ColumnLayout = ({ children }: IProps) => {
+  const router = useRouter();
   return (
     <>
       <ContentLayout
@@ -79,13 +84,26 @@ const ColumnLayout = ({ children }: IProps) => {
               <Menu>
                 <Link href='/column'>
                   <a>
-                    <MenuItem>처음 오신 분을 위한 칼럼</MenuItem>
+                    <MenuItem isNowPage={router.pathname === '/column'}>
+                      처음 오신 분을 위한 칼럼
+                    </MenuItem>
                   </a>
                 </Link>
-                <Link href='/column/columns/1'>
-                  <MenuItem>재회 칼럼</MenuItem>
+                <Link
+                  href={{
+                    pathname: '/columns',
+                    query: {
+                      page: 1,
+                    },
+                  }}
+                  as='/columns'
+                >
+                  <a>
+                    <MenuItem isNowPage={router.pathname === '/columns'}>
+                      칼럼
+                    </MenuItem>
+                  </a>
                 </Link>
-                <MenuItem>내담자 전용 칼럼</MenuItem>
               </Menu>
             </MenuContainer>
             <ColumnContainer>{children}</ColumnContainer>
