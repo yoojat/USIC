@@ -20,7 +20,8 @@ const ContentWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 400px;
+  /* margin-bottom: 400px; */
+  margin-bottom: 150px;
 `;
 
 const ContentContainer = styled.div`

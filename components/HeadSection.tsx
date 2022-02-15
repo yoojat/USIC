@@ -36,7 +36,7 @@ const BannerImageContainer = styled.div<{
   position: relative;
   width: 100%;
   /* min-width: 900px; */
-  ${(props) => (props.isMain ? `height: 600px;` : `height: 310px;`)}
+  ${(props) => (props.isMain ? `height: 100vh;` : `height: 310px;`)}
   img {
     ${media.tablet} {
       transform: translateX(-10%);
