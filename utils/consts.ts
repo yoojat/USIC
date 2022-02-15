@@ -17,8 +17,8 @@ operators.set('천홍범', {
 });
 operators.set('김태영', {
   name: '김태영',
-  subtitle: '철저한 검증가',
-  context: `<p>화이팅</p>`,
+  subtitle: '무인시스템의 산증인',
+  context: `<p>5여 년의 무인시스템 개발로 누구보다 스터디카페 운영 시스템에 대해서 잘 알고 있습니다.</p><p>최고의 스터디카페 운영 시스템이 어떤것인지 알려드리겠습니다.</p>`,
 });
 
 export default operators;

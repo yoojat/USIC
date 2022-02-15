@@ -165,12 +165,13 @@ export default function NavBar() {
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'about'}>
             <Link href='/about/usic'>USIC 소개</Link>
           </MenuTitle>
+          {/* 
           <MenuTitle
             isNowPage={firstPathFinder(router.pathname) === 'services'}
           >
             <Link href='/services/program'>제공서비스</Link>
           </MenuTitle>
-          <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'column'}>
+      <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'column'}>
             <Link href='/column'>칼럼</Link>
           </MenuTitle>
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'process'}>
@@ -181,22 +182,23 @@ export default function NavBar() {
           </MenuTitle>
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'process'}>
             <Link href='/about'>문의</Link>
-          </MenuTitle>
+          </MenuTitle> */}
         </MenuContainer>
         <SideMenuContainer isSideMenuShow={isSideMenuShow}>
           <SideMenuNavContainer>
             <Link href={'/about/usic'}>
               <SideMenuItem>USIC 소개</SideMenuItem>
             </Link>
+            {/*
             <Link href={'/services/program'}>
               <SideMenuItem>제공서비스</SideMenuItem>
             </Link>
-            <Link href={'/column'}>
+           <Link href={'/column'}>
               <SideMenuItem>칼럼</SideMenuItem>
             </Link>
             <SideMenuItem>상담신청</SideMenuItem>
             <SideMenuItem>후기</SideMenuItem>
-            <SideMenuItem>문의</SideMenuItem>
+            <SideMenuItem>문의</SideMenuItem> */}
           </SideMenuNavContainer>
         </SideMenuContainer>
         <MenuBarContainer onClick={() => setIsSideMenuShow((prev) => !prev)}>

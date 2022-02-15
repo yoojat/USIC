@@ -96,7 +96,7 @@ const Home: NextPage = () => {
               </Title>
               <SubTitle></SubTitle>
             </TitleContainer>
-            <CountContainer>
+            {/* <CountContainer>
               <CountItem>
                 <CountTitle>컨설팅 상담건수</CountTitle>
                 <CountContent>300</CountContent>
@@ -112,7 +112,7 @@ const Home: NextPage = () => {
             </CountContainer>
             <TryExperienceButtonContainer>
               <TryExperienceButton>USIC 컬럼 바로가기</TryExperienceButton>
-            </TryExperienceButtonContainer>
+            </TryExperienceButtonContainer> */}
           </ContentContainer>
         </ContentWrapper>
       </ContentLayout>
