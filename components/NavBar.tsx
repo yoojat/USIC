@@ -29,6 +29,7 @@ const NavContainer = styled.nav`
 const ImageContainer = styled.div`
   width: 100px;
   position: relative;
+  border-radius: 30px;
 `;
 const MenuContainer = styled.div`
   ${media.tablet} {
@@ -163,7 +164,7 @@ export default function NavBar() {
         </ImageContainer>
         <MenuContainer>
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'about'}>
-            <Link href='/about/usic'>USIC 소개</Link>
+            <Link href='/about/usic'>무센 소개</Link>
           </MenuTitle>
 
           <MenuTitle
@@ -188,7 +189,7 @@ export default function NavBar() {
         <SideMenuContainer isSideMenuShow={isSideMenuShow}>
           <SideMenuNavContainer>
             <Link href={'/about/usic'}>
-              <SideMenuItem>USIC 소개</SideMenuItem>
+              <SideMenuItem>무센 소개</SideMenuItem>
             </Link>
 
             <Link href={'/services'}>

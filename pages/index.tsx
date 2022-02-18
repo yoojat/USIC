@@ -26,7 +26,7 @@ const ContentWrapper = styled.div`
 
 const ContentContainer = styled.div`
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   padding-bottom: 60px;
   padding-top: 30px;
 `;

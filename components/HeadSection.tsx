@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 import { media } from '../styles/theme';
 
@@ -160,8 +161,10 @@ interface IProps {
   isMain?: boolean;
   bannerImgUrl?: string;
   headTitle?: string;
-  subMenus?: { title: string; path: string }[];
+  subMenus?: { title: string; value: string }[];
   topDescription?: string;
+  nowSubPage?: string;
+  setNowSubPage?: Dispatch<SetStateAction<string>>;
 }
 
 export default function HeadSection({
@@ -171,6 +174,8 @@ export default function HeadSection({
   headTitle,
   subMenus,
   topDescription,
+  nowSubPage,
+  setNowSubPage,
 }: IProps) {
   const router = useRouter();
 
@@ -207,13 +212,14 @@ export default function HeadSection({
         {subMenus && (
           <SubMenuContainer>
             {subMenus.map((subMenu, index) => (
-              <Link key={index} href={subMenu.path}>
-                <SubMenu>
-                  <SubMenuItem isNowPage={subMenu.path === router.route}>
-                    {subMenu.title}
-                  </SubMenuItem>
-                </SubMenu>
-              </Link>
+              <SubMenu
+                key={index}
+                onClick={() => setNowSubPage && setNowSubPage(subMenu.value)}
+              >
+                <SubMenuItem isNowPage={subMenu.value === nowSubPage}>
+                  {subMenu.title}
+                </SubMenuItem>
+              </SubMenu>
             ))}
           </SubMenuContainer>
         )}

@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 import HeadSection from '../components/HeadSection';
 
@@ -9,7 +10,7 @@ const ContentWrapper = styled.div<{ isMain?: boolean }>`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 900px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 `;
@@ -19,8 +20,10 @@ interface IProps {
   isMain?: boolean;
   bannerImgUrl?: string;
   headTitle?: string;
-  subMenus?: { title: string; path: string }[];
+  subMenus?: { title: string; value: string }[];
   children: React.ReactNode;
+  nowSubPage?: string;
+  setNowSubPage?: Dispatch<SetStateAction<string>>;
 }
 
 const ContentLayout = ({
@@ -30,6 +33,8 @@ const ContentLayout = ({
   headTitle,
   subMenus,
   children,
+  nowSubPage,
+  setNowSubPage,
 }: IProps) => {
   return (
     <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
@@ -39,6 +44,8 @@ const ContentLayout = ({
         bannerImgUrl={bannerImgUrl}
         headTitle={headTitle}
         subMenus={subMenus}
+        nowSubPage={nowSubPage}
+        setNowSubPage={setNowSubPage}
       />
       <ContentWrapper isMain={isMain}>{children}</ContentWrapper>
     </div>
