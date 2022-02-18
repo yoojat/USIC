@@ -140,7 +140,7 @@ const SubMenu = styled.div`
 const SubMenuItem = styled.div<{ isNowPage?: boolean }>`
   background-color: white;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   box-shadow: 3px 3px 5px #dedede;
   display: inline-block;
   color: ${(props) => (props.isNowPage ? props.theme.color.aBlue : 'inheirt')};
@@ -150,10 +150,8 @@ const SubMenuItem = styled.div<{ isNowPage?: boolean }>`
   cursor: pointer;
   /* padding: 10px; */
   width: 200px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-top: 10px;
 `;
 

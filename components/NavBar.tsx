@@ -165,12 +165,13 @@ export default function NavBar() {
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'about'}>
             <Link href='/about/usic'>USIC 소개</Link>
           </MenuTitle>
-          {/* 
+
           <MenuTitle
             isNowPage={firstPathFinder(router.pathname) === 'services'}
           >
-            <Link href='/services/program'>제공서비스</Link>
+            <Link href='/services'>제공서비스</Link>
           </MenuTitle>
+          {/* 
       <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'column'}>
             <Link href='/column'>칼럼</Link>
           </MenuTitle>
@@ -189,10 +190,11 @@ export default function NavBar() {
             <Link href={'/about/usic'}>
               <SideMenuItem>USIC 소개</SideMenuItem>
             </Link>
-            {/*
-            <Link href={'/services/program'}>
+
+            <Link href={'/services'}>
               <SideMenuItem>제공서비스</SideMenuItem>
             </Link>
+            {/*
            <Link href={'/column'}>
               <SideMenuItem>칼럼</SideMenuItem>
             </Link>

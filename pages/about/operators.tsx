@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import HeadSection from '../../components/HeadSection';
 import { media } from '../../styles/theme';
-import ArrowIcon from './ArrowIcon';
+import ArrowIcon from '../../components/ArrowIcon';
 import operators from '../../utils/consts';
 
 const ContentWrapper = styled.div`
