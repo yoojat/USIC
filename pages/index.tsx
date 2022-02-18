@@ -83,7 +83,6 @@ const Home: NextPage = () => {
     <>
       {/* <HeadSection title='홈' isMain={true} /> */}
       <ContentLayout
-        title='홈'
         isMain={true}
         headTitle={`이제 스터디카페, 독서실의 거품이 빠질 때가 되었습니다.`}
       >

@@ -157,7 +157,7 @@ const SubMenuItem = styled.div<{ isNowPage?: boolean }>`
 `;
 
 interface IProps {
-  title: string;
+  title?: string;
   isMain?: boolean;
   bannerImgUrl?: string;
   headTitle?: string;
@@ -177,12 +177,12 @@ export default function HeadSection({
   nowSubPage,
   setNowSubPage,
 }: IProps) {
-  const router = useRouter();
-
   return (
     <>
       <Head>
-        <title>{title} | 무인공간통합센터</title>
+        <title>
+          {title ? `${title} | 무인공간통합센터` : '무인공간통합센터'}
+        </title>
       </Head>
       <BannerContainer isMain={isMain}>
         <BannerImageContainer bannerImgUrl={bannerImgUrl} isMain={isMain}>

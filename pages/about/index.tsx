@@ -165,7 +165,7 @@ export default function Usic() {
   return (
     <div>
       <HeadSection
-        title='무인공간통합센터 소개'
+        title='소개 | 무인공간통합센터'
         bannerImgUrl='/banner2.jpg'
         headTitle='무인공간통합센터 소개'
         subMenus={[

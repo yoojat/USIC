@@ -16,7 +16,7 @@ const ContentWrapper = styled.div<{ isMain?: boolean }>`
 `;
 
 interface IProps {
-  title: string;
+  title?: string;
   isMain?: boolean;
   bannerImgUrl?: string;
   headTitle?: string;
