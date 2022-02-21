@@ -207,7 +207,7 @@ export default function HeadSection({
             (isMain ? (
               <VideoContainer>
                 <iframe
-                  src='https://www.youtube.com/embed/HP_ZnEkbC7Y?start=50&controls=0&autoplay=1&mute=1&loop=1&playlist=HP_ZnEkbC7Y'
+                  src='https://www.youtube-nocookie.com/embed/HP_ZnEkbC7Y?start=77&end=414&controls=0&autoplay=1&mute=1&loop=1&playlist=HP_ZnEkbC7Y&showinfo=0'
                   title='YouTube video player'
                 ></iframe>
 
