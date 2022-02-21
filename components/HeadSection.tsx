@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 import { media } from '../styles/theme';
@@ -8,7 +6,7 @@ import { media } from '../styles/theme';
 const BannerContainer = styled.div<{ isMain?: boolean }>`
   position: absolute;
   width: 100%;
-  height: ${(props) => (props.isMain ? '800px' : '400px')};
+  height: ${(props) => (props.isMain ? '800px' : '430px')};
   overflow: hidden;
 `;
 
@@ -46,7 +44,7 @@ const BannerImageContainer = styled.div<{
   ${(props) =>
     props.bannerImgUrl
       ? `background-image: url(${props.bannerImgUrl})`
-      : `background: rgba(0,0,0,0.5) url(/banner.jpg)`};
+      : `background: rgba(0,0,0,0.5) url(/main_banner.jpeg)`};
   background-size: cover;
   background-blend-mode: darken;
   display: flex;
@@ -76,33 +74,30 @@ const HeadTitle = styled.h3`
 `;
 
 const MainTitleContainer = styled.div`
-  padding: 50px;
+  padding: 30px;
   width: 100%;
   max-width: 1200px;
-  ${media.pc} {
-    margin-left: 30px;
-    position: absolute;
-    left: 10%;
-    top: 20%;
-  }
+  text-shadow: 2px 2px 2px gray;
   ${media.tablet} {
-    width: 100%;
-    top: inherit;
-    margin-left: inherit;
-    position: inherit;
-    left: inherit;
+    width: 80%;
+  }
+  ${media.pc} {
+    /* margin-left: 30px; */
+    position: absolute;
+    left: 5%;
+    top: 20%;
   }
 `;
 
 const TopDescription = styled.div`
   color: ${(props) => props.theme.color.aBlue};
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
   padding-bottom: 10px;
 `;
 
 const BottomDescription = styled.div`
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.5;
   margin-top: 20px;
   color: white;
@@ -155,6 +150,28 @@ const SubMenuItem = styled.div<{ isNowPage?: boolean }>`
   padding-bottom: 20px;
   margin-top: 10px;
 `;
+const VideoContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+    @media (min-aspect-ratio: 16/9) {
+      /* height = 100 * (9 / 16) = 56.25 */
+      height: 56.25vw;
+    }
+    @media (max-aspect-ratio: 16/9) {
+      /* width = 100 / (9 / 16) = 177.777777 */
+      width: 177.78vh;
+    }
+  }
+`;
 
 interface IProps {
   title?: string;
@@ -188,23 +205,30 @@ export default function HeadSection({
         <BannerImageContainer bannerImgUrl={bannerImgUrl} isMain={isMain}>
           {headTitle &&
             (isMain ? (
-              <MainTitleContainer>
-                <TopDescription>
-                  스터디카페, 독서실 창업 / 운영 / 관리 상담
-                </TopDescription>
-                <BigHeadTitle>{headTitle}</BigHeadTitle>
-                <BottomDescription>
-                  <p>
-                    저희가 제공하는 칼럼을 읽어보시지도 않고, <br />
-                    상담을 신청하는 분들은 거절 합니다.
-                  </p>
-                  <p>
-                    이곳을 찾는 많은 분들이
-                    <br />
-                    후기와 무료 칼럼만으로 성공하실 수 있습니다.
-                  </p>
-                </BottomDescription>
-              </MainTitleContainer>
+              <VideoContainer>
+                <iframe
+                  src='https://www.youtube.com/embed/HP_ZnEkbC7Y?start=50&controls=0&autoplay=1&mute=1&loop=1&playlist=HP_ZnEkbC7Y'
+                  title='YouTube video player'
+                ></iframe>
+
+                <MainTitleContainer>
+                  <TopDescription>
+                    스터디카페, 독서실 창업 / 운영 / 관리 상담
+                  </TopDescription>
+                  <BigHeadTitle>{headTitle}</BigHeadTitle>
+                  <BottomDescription>
+                    <p>
+                      저희가 제공하는 칼럼을 읽어보시지도 않고, <br />
+                      상담을 신청하는 분들은 거절 합니다.
+                    </p>
+                    <p>
+                      이곳을 찾는 많은 분들이
+                      <br />
+                      후기와 무료 칼럼만으로 성공하실 수 있습니다.
+                    </p>
+                  </BottomDescription>
+                </MainTitleContainer>
+              </VideoContainer>
             ) : (
               <HeadTitle>{headTitle}</HeadTitle>
             ))}

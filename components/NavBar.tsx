@@ -107,6 +107,15 @@ const SideMenuItem = styled.div`
   }
 `;
 
+const LogoImgContainer = styled.div`
+  span {
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+`;
+
 export default function NavBar() {
   const router = useRouter();
 
@@ -144,7 +153,7 @@ export default function NavBar() {
         <ImageContainer>
           <Link href='/'>
             <a>
-              <div
+              <LogoImgContainer
                 style={{
                   position: 'relative',
                   width: '100%',
@@ -154,17 +163,18 @@ export default function NavBar() {
                 <Image
                   src={'/logo.png'}
                   alt={'무인공간통합센터'}
-                  layout='fill'
+                  width={70}
+                  height={70}
                   objectFit='contain'
                   priority={true}
                 />
-              </div>
+              </LogoImgContainer>
             </a>
           </Link>
         </ImageContainer>
         <MenuContainer>
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'about'}>
-            <Link href='/about'>무센 소개</Link>
+            <Link href='/about'>센터 소개</Link>
           </MenuTitle>
 
           <MenuTitle
@@ -189,7 +199,7 @@ export default function NavBar() {
         <SideMenuContainer isSideMenuShow={isSideMenuShow}>
           <SideMenuNavContainer>
             <Link href={'/about'}>
-              <SideMenuItem>무센 소개</SideMenuItem>
+              <SideMenuItem>센터 소개</SideMenuItem>
             </Link>
 
             <Link href={'/services'}>
@@ -206,9 +216,9 @@ export default function NavBar() {
         </SideMenuContainer>
         <MenuBarContainer onClick={() => setIsSideMenuShow((prev) => !prev)}>
           {isSideMenuShow ? (
-            <FontAwesomeIcon icon={faTimes} size='3x' />
+            <FontAwesomeIcon icon={faTimes} size='3x' color='#D4E5F5' />
           ) : (
-            <FontAwesomeIcon icon={faBars} size='3x' />
+            <FontAwesomeIcon icon={faBars} size='3x' color='#D4E5F5' />
           )}
         </MenuBarContainer>
       </NavContainer>

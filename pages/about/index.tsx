@@ -32,6 +32,9 @@ const MainContentContainer = styled.div`
 `;
 
 const OperatorMainContentContaner = styled(MainContentContainer)`
+  ${media.tablet} {
+    flex-direction: column;
+  }
   flex-direction: row;
 `;
 
@@ -40,21 +43,22 @@ const PhotoContainer = styled.div`
     display: none;
   }
   text-align: center;
-  width: 100%;
   margin-bottom: 100px;
+  margin-right: 30px;
+  min-width: 400px;
 `;
 const TextContainer = styled.div`
-  flex: 1;
-  flex-shrink: 1;
   h2 {
     font-size: 28px;
+    margin-bottom: 60px;
   }
   p {
     font-size: 17px;
     line-height: 1.55;
     font-weight: 400;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 80px;
+    color: rgb(80, 80, 80);
   }
   padding-bottom: 30px;
 `;
@@ -182,8 +186,8 @@ export default function Usic() {
               <Image
                 src='/professional.jpg'
                 objectFit='contain'
-                width='600'
-                height='400'
+                width='500'
+                height='300'
               />
             </PhotoContainer>
             <TextContainer>
@@ -207,15 +211,15 @@ export default function Usic() {
               <p>
                 20대 시절, 열정 만큼은 누구에게도 뒤쳐지기 싫어, 다양한 창업을
                 시도해 나갔습니다. 그리고 제가 할 수 있는 일들이 하나둘 생겨나기
-                시작했습니다. 학습공간의 트렌드는 정말 빠르게 진화해 갑니다.
-                거듭 변화하는 트렌드 속에서도, 살아남을 수 있는 새로운 방향을
-                모색하며, 학습공간을 운영해 나가며, 컨설팅을 함께 진행해
-                왔습니다.
+                시작했습니다.
               </p>
               <p>
-                특히, 인건비 상승으로 인해, 무인 시스템이 빠르게 발전하였으며,
-                코로나 시대의 빈점포들은, 이러한 무인 시스템을 통한 무인공간으로
-                빠르게 탈바꿈하였습니다.
+                학습공간의 트렌드는 정말 빠르게 진화해 갑니다. 거듭 변화하는
+                트렌드 속에서도, 살아남을 수 있는 새로운 방향을 모색하며,
+                학습공간을 운영해 나가며, 컨설팅을 함께 진행해 왔습니다. 특히,
+                인건비 상승으로 인해, 무인 시스템이 빠르게 발전하였으며, 코로나
+                시대의 빈점포들은, 이러한 무인 시스템을 통한 무인공간으로 빠르게
+                탈바꿈하였습니다.
               </p>
               <p>
                 그런데 여전히 많은 학습공간 컨설턴트들은 경험보다는 영업을 위해,
@@ -226,15 +230,12 @@ export default function Usic() {
               </p>
               <p>
                 (예비)운영자의 입장이되어, 현실성있는 창업, 운영, 관리를 상담해
-                줄 필요가 있다고 생각했습니다.
-              </p>
-              <p>
-                투자금액은 얼마나 적당할까, 항상 잘될 것이라는 착각이 얼마나
-                무서운지, 전문 개발자의 관점에서의 무인시스템의 허와 실,
-                공간관리의 최적화된 방향은 무엇인지, 창업 실패의 리스크를 어떻게
-                대처하면 좋을지, 지속적으로 변화하는 트렌드 속에서, 어떠한
-                방향으로 나아갈지 등의 현실적인 가이드 라인들 제공하고
-                싶었습니다.
+                줄 필요가 있다고 생각했습니다. 투자금액은 얼마나 적당할까, 항상
+                잘될 것이라는 착각이 얼마나 무서운지, 전문 개발자의 관점에서의
+                무인시스템의 허와 실, 공간관리의 최적화된 방향은 무엇인지, 창업
+                실패의 리스크를 어떻게 대처하면 좋을지, 지속적으로 변화하는
+                트렌드 속에서, 어떠한 방향으로 나아갈지 등의 현실적인 가이드
+                라인들 제공하고 싶었습니다.
               </p>
               <p>
                 세상은 너무 빠르게 급변화해 가고있습니다. 예비운영자와 운영자들
