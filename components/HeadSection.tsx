@@ -243,6 +243,10 @@ export default function HeadSection({
         <meta property='og:site_name' content='무인공간통합센터' />
         <meta property='og:url' content='https://muinspace.co.kr' />
         <meta property='og:image' content='/logo.png' />
+        <meta
+          name='naver-site-verification'
+          content='da70c5ec3424c052c157a2c3b957c9a5a337c074'
+        />
       </Head>
       <BannerContainer isMain={isMain}>
         <BannerImageContainer bannerImgUrl={bannerImgUrl} isMain={isMain}>
