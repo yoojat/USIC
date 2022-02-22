@@ -10,7 +10,7 @@ const ContainerFooter = styled.footer`
 const FooterContentContainer = styled.div`
   font-size: 14px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 const LogoImgContainer = styled.div`
@@ -18,6 +18,7 @@ const LogoImgContainer = styled.div`
     border-radius: 50px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
+  margin-right: 20px;
 `;
 
 const Footer: NextComponentType = () => {
@@ -26,8 +27,8 @@ const Footer: NextComponentType = () => {
       <FooterContentContainer>
         <LogoImgContainer>
           <Image
-            width={100}
-            height={100}
+            width={40}
+            height={40}
             objectFit={'contain'}
             src={'/logo.png'}
             alt={'logo'}
