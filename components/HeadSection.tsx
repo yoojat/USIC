@@ -234,6 +234,11 @@ export default function HeadSection({
           property='og:description'
           content='국내 최초 개인스터디카페 창업 및 운영 업체입니다. 업계 최고 전문가들이 모여 만들어낸 서비스를 제공합니다.'
         />
+        <meta
+          name='keywords'
+          content='개인스터디카페, 중고키오스크, 키오스크구매, 스터디카페창업, 독서실창업, 무인스터디카페, 키오스크추천,
+스터디카페운영, 스터디카페인테리어'
+        />
         <meta property='og:type' content='website' />
         <meta property='og:site_name' content='무인공간통합센터' />
         <meta property='og:url' content='https://muinspace.co.kr' />
