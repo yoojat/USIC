@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { media } from '../styles/theme';
 
@@ -51,6 +51,7 @@ const BannerImageContainer = styled.div<{
   justify-content: center;
   align-items: center;
   opacity: 1;
+  background-position: 72% 75%;
 `;
 
 const HeadTitle = styled.h3`
@@ -194,6 +195,19 @@ export default function HeadSection({
   nowSubPage,
   setNowSubPage,
 }: IProps) {
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, []);
   return (
     <>
       <Head>
@@ -205,12 +219,7 @@ export default function HeadSection({
         <BannerImageContainer bannerImgUrl={bannerImgUrl} isMain={isMain}>
           {headTitle &&
             (isMain ? (
-              <VideoContainer>
-                <iframe
-                  src='https://www.youtube-nocookie.com/embed/HP_ZnEkbC7Y?start=77&end=414&controls=0&autoplay=1&mute=1&loop=1&playlist=HP_ZnEkbC7Y&showinfo=0'
-                  title='YouTube video player'
-                ></iframe>
-
+              isMobile ? (
                 <MainTitleContainer>
                   <TopDescription>
                     스터디카페, 독서실 창업 / 운영 / 관리 상담
@@ -228,7 +237,32 @@ export default function HeadSection({
                     </p>
                   </BottomDescription>
                 </MainTitleContainer>
-              </VideoContainer>
+              ) : (
+                <VideoContainer>
+                  <iframe
+                    src='https://www.youtube-nocookie.com/embed/HP_ZnEkbC7Y?start=77&end=414&controls=0&autoplay=1&mute=1&loop=1&playlist=HP_ZnEkbC7Y&showinfo=0'
+                    title='YouTube video player'
+                  ></iframe>
+
+                  <MainTitleContainer>
+                    <TopDescription>
+                      스터디카페, 독서실 창업 / 운영 / 관리 상담
+                    </TopDescription>
+                    <BigHeadTitle>{headTitle}</BigHeadTitle>
+                    <BottomDescription>
+                      <p>
+                        저희가 제공하는 칼럼을 읽어보시지도 않고, <br />
+                        상담을 신청하는 분들은 거절 합니다.
+                      </p>
+                      <p>
+                        이곳을 찾는 많은 분들이
+                        <br />
+                        후기와 무료 칼럼만으로 성공하실 수 있습니다.
+                      </p>
+                    </BottomDescription>
+                  </MainTitleContainer>
+                </VideoContainer>
+              )
             ) : (
               <HeadTitle>{headTitle}</HeadTitle>
             ))}
