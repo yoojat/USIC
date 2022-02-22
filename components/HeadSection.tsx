@@ -241,7 +241,7 @@ export default function HeadSection({
         />
         <meta property='og:type' content='website' />
         <meta property='og:site_name' content='무인공간통합센터' />
-        <meta property='og:url' content='https://muinspace.co.kr' />
+        <meta property='og:url' content='https://www.muinspace.co.kr' />
         <meta property='og:image' content='/logo.png' />
         <meta
           name='naver-site-verification'
