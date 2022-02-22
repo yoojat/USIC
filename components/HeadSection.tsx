@@ -6,7 +6,7 @@ import { media } from '../styles/theme';
 const BannerContainer = styled.div<{ isMain?: boolean }>`
   position: absolute;
   width: 100%;
-  height: ${(props) => (props.isMain ? '800px' : '430px')};
+  height: ${(props) => (props.isMain ? '100vh' : '430px')};
   overflow: hidden;
 `;
 
@@ -52,6 +52,8 @@ const BannerImageContainer = styled.div<{
   align-items: center;
   opacity: 1;
   background-position: 72% 75%;
+
+  ${(props) => props.isMain && `height: 100vh;`}
 `;
 
 const HeadTitle = styled.h3`
@@ -214,8 +216,28 @@ export default function HeadSection({
         <title>
           {title
             ? `${title} | 무인공간통합센터`
-            : '국내 최초 개인스터디카페창업 컨설팅 & 솔루션 그룹 - 무인공간통합센터'}
+            : '무인공간통합센터 - 개인스터디카페 컨설팅 및 솔루션'}
         </title>
+        <meta
+          property='og:title'
+          content={
+            title
+              ? `${title} | 무인공간통합센터`
+              : '무인공간통합센터 - 개인스터디카페 컨설팅 및 솔루션'
+          }
+        />
+        <meta
+          name='description'
+          content='국내 최초 개인스터디카페 창업 및 운영 업체입니다. 업계 최고 전문가들이 모여 만들어낸 서비스를 제공합니다.'
+        />
+        <meta
+          property='og:description'
+          content='국내 최초 개인스터디카페 창업 및 운영 업체입니다. 업계 최고 전문가들이 모여 만들어낸 서비스를 제공합니다.'
+        />
+        <meta property='og:type' content='website' />
+        <meta property='og:site_name' content='무인공간통합센터' />
+        <meta property='og:url' content='https://muinspace.co.kr' />
+        <meta property='og:image' content='/logo.png' />
       </Head>
       <BannerContainer isMain={isMain}>
         <BannerImageContainer bannerImgUrl={bannerImgUrl} isMain={isMain}>
@@ -242,7 +264,7 @@ export default function HeadSection({
               ) : (
                 <VideoContainer>
                   <iframe
-                    src='https://www.youtube-nocookie.com/embed/HP_ZnEkbC7Y?start=77&end=414&controls=0&autoplay=1&mute=1&loop=1&playlist=HP_ZnEkbC7Y&showinfo=0'
+                    src='https://www.youtube-nocookie.com/embed/HP_ZnEkbC7Y?controls=0&autoplay=1&mute=1&loop=1&playlist=HP_ZnEkbC7Y&showinfo=0'
                     title='YouTube video player'
                   ></iframe>
 

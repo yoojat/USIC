@@ -37,7 +37,12 @@ const ContentLayout = ({
   setNowSubPage,
 }: IProps) => {
   return (
-    <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
+    <div
+      style={{
+        backgroundColor: 'rgb(250, 250, 250)',
+        height: isMain ? '100vh' : 'inherit',
+      }}
+    >
       <HeadSection
         title={title}
         isMain={isMain}

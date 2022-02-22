@@ -27,7 +27,7 @@ const MainContentContainer = styled.div`
   max-width: 1200px;
   display: flex;
   align-items: flex-start;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 100px;
 `;
 

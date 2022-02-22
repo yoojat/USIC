@@ -10,12 +10,12 @@ const ContainerFooter = styled.footer`
 const FooterContentContainer = styled.div`
   font-size: 14px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 `;
 
 const LogoImgContainer = styled.div`
   span {
-    border-radius: 40px;
+    border-radius: 50px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 `;
@@ -24,19 +24,30 @@ const Footer: NextComponentType = () => {
   return (
     <ContainerFooter>
       <FooterContentContainer>
-        <LogoImgContainer
-          style={{ position: 'relative', width: '80px', height: '50px' }}
-        >
+        <LogoImgContainer>
           <Image
-            width={50}
-            height={50}
+            width={100}
+            height={100}
             objectFit={'contain'}
             src={'/logo.png'}
             alt={'logo'}
           />
         </LogoImgContainer>
-        <div style={{ paddingBottom: '10px', marginLeft: '10px' }}>
-          무인공간통합센터 | 부산광역시 북구 양달로 4번길 11
+        <div
+          style={{
+            paddingBottom: '10px',
+            marginLeft: '10px',
+            lineHeight: '1.3',
+          }}
+        >
+          (주)크리플레이 ㅣ COPYRIGHT 2021.
+          <br />
+          CREPLAY ALL RIGHT RESERVED
+          <br /> 주소 : 부산 북구 양달로 4번길 11, 세흥빌딩 4층
+          <br />
+          대표자 : 송병근
+          <br />
+          사업자 등록 번호 : 617-86-24973
         </div>
       </FooterContentContainer>
     </ContainerFooter>
