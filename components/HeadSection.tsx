@@ -212,7 +212,9 @@ export default function HeadSection({
     <>
       <Head>
         <title>
-          {title ? `${title} | 무인공간통합센터` : '무인공간통합센터'}
+          {title
+            ? `${title} | 무인공간통합센터`
+            : '국내 최초 개인스터디카페창업 컨설팅 & 솔루션 그룹 - 무인공간통합센터'}
         </title>
       </Head>
       <BannerContainer isMain={isMain}>
