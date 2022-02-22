@@ -243,6 +243,17 @@ export default function HeadSection({
         <meta property='og:site_name' content='무인공간통합센터' />
         <meta property='og:url' content='https://www.muinspace.co.kr' />
         <meta property='og:image' content='/logo.png' />
+        <meta property='al:ios:url' content='applinks://docs' />
+        <meta property='al:ios:app_store_id' content='12345' />
+        <meta property='al:ios:app_name' content='App Links' />
+        <meta property='al:android:url' content='applinks://docs' />
+        <meta property='al:android:app_name' content='App Links' />
+        <meta property='al:android:package' content='org.applinks' />
+        <link rel='canonical' href='https://www.muinspace.co.kr/' />
+        <meta
+          property='al:web:url'
+          content='http://applinks.org/documentation'
+        ></meta>
         <meta
           name='naver-site-verification'
           content='da70c5ec3424c052c157a2c3b957c9a5a337c074'
