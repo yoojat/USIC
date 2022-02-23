@@ -89,6 +89,10 @@ const MainTitleContainer = styled.div`
   ${media.pc} {
     left: 10%;
   }
+  ${media.mobile} {
+    top: 15%;
+    left: 5%;
+  }
   position: absolute;
   left: 25%;
   top: 20%;
@@ -190,6 +194,8 @@ const FreeConsultingButton = styled.button`
   }
 `;
 
+const CommentsContainer = styled.div``;
+
 interface IProps {
   title?: string;
   isMain?: boolean;
@@ -278,30 +284,7 @@ export default function HeadSection({
           {headTitle &&
             (isMain ? (
               isMobile ? (
-                <MainTitleContainer>
-                  <TopDescription>
-                    스터디카페, 독서실 창업 / 운영 / 관리 상담
-                  </TopDescription>
-                  <BigHeadTitle>{headTitle}</BigHeadTitle>
-                  <BottomDescription>
-                    <p>
-                      저희가 제공하는 칼럼을 읽어보시지도 않고, <br />
-                      상담을 신청하는 분들은 거절 합니다.
-                    </p>
-                    <p>
-                      이곳을 찾는 많은 분들이
-                      <br />
-                      후기와 무료 칼럼만으로 성공하실 수 있습니다.
-                    </p>
-                  </BottomDescription>
-                </MainTitleContainer>
-              ) : (
-                <VideoContainer>
-                  <iframe
-                    src='https://www.youtube-nocookie.com/embed/HP_ZnEkbC7Y?controls=0&autoplay=1&mute=1&loop=1&playlist=HP_ZnEkbC7Y&showinfo=0'
-                    title='YouTube video player'
-                  ></iframe>
-
+                <>
                   <MainTitleContainer>
                     <TopDescription>
                       스터디카페, 독서실 창업 / 운영 / 관리 상담
@@ -317,16 +300,50 @@ export default function HeadSection({
                         <br />
                         후기와 무료 칼럼만으로 성공하실 수 있습니다.
                       </p>
-                      <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
-                        <a target='_blank'>
-                          <FreeConsultingButton>
-                            무료 상담하기
-                          </FreeConsultingButton>
-                        </a>
-                      </Link>
                     </BottomDescription>
+                    <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
+                      <a target='_blank'>
+                        <FreeConsultingButton>
+                          무료 상담하기
+                        </FreeConsultingButton>
+                      </a>
+                    </Link>
                   </MainTitleContainer>
-                </VideoContainer>
+                </>
+              ) : (
+                <>
+                  <VideoContainer>
+                    <iframe
+                      src='https://www.youtube-nocookie.com/embed/HP_ZnEkbC7Y?controls=0&autoplay=1&mute=1&loop=1&playlist=HP_ZnEkbC7Y&showinfo=0'
+                      title='YouTube video player'
+                    ></iframe>
+
+                    <MainTitleContainer>
+                      <TopDescription>
+                        스터디카페, 독서실 창업 / 운영 / 관리 상담
+                      </TopDescription>
+                      <BigHeadTitle>{headTitle}</BigHeadTitle>
+                      <BottomDescription>
+                        <p>
+                          저희가 제공하는 칼럼을 읽어보시지도 않고, <br />
+                          상담을 신청하는 분들은 거절 합니다.
+                        </p>
+                        <p>
+                          이곳을 찾는 많은 분들이
+                          <br />
+                          후기와 무료 칼럼만으로 성공하실 수 있습니다.
+                        </p>
+                        <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
+                          <a target='_blank'>
+                            <FreeConsultingButton>
+                              무료 상담하기
+                            </FreeConsultingButton>
+                          </a>
+                        </Link>
+                      </BottomDescription>
+                    </MainTitleContainer>
+                  </VideoContainer>
+                </>
               )
             ) : (
               <HeadTitle>{headTitle}</HeadTitle>

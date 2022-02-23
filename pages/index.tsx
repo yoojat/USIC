@@ -2,80 +2,29 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import styled from 'styled-components';
 import ContentLayout from '../components/ContentLayout';
-import HeadSection from '../components/HeadSection';
-import {
-  PaperIcon,
-  PhoneIcon,
-  ProcessingIcon,
-  ReportIcon,
-  SolutionIcon,
-} from '../components/Svg';
-import { media } from '../styles/theme';
 
-const ContentWrapper = styled.div`
-  /* position: absolute; */
-  margin-top: 150px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  /* margin-bottom: 400px; */
-  margin-bottom: 150px;
-`;
-
-const ContentContainer = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  padding-bottom: 60px;
-  padding-top: 30px;
-`;
-
-const TitleContainer = styled.div``;
-const Title = styled.h1`
-  font-size: 46px;
-  font-weight: 700;
-  color: white;
-  padding: 50px;
-`;
-const SubTitle = styled.h2`
-  font-size: 17px;
-  font-weight: 400;
-  margin-top: 17px;
-`;
-
-const CountContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  color: white;
-  font-size: 20px;
-`;
-const CountItem = styled.div`
-  padding: 50px;
-`;
-const CountTitle = styled.div`
-  background-color: #80868a;
-  padding: 10px;
-  border-radius: 5px;
-`;
-const CountContent = styled.div`
+const KakaoDisplay = styled.div`
   text-align: center;
-  color: ${(props) => props.theme.color.aBlue};
-  font-weight: 700;
-  font-size: 60px;
-  padding: 10px;
+  margin-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 50px;
 `;
-const TryExperienceButtonContainer = styled.div`
-  text-align: center;
+
+const KakaoDisplayTitle = styled.h1`
+  font-size: 45px;
+  font-weight: 600;
+  margin-bottom: 40px;
 `;
-const TryExperienceButton = styled.button`
-  background-color: ${(props) => props.theme.color.aBlue};
-  color: white;
-  padding: 15px 30px;
-  font-size: 20px;
-  border-radius: 30px;
+const KakaoDisplayTitle2 = styled.h2`
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+`;
+const KakaoDisplayTitle3 = styled.h3`
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 30px;
 `;
 
 const Home: NextPage = () => {
@@ -85,6 +34,25 @@ const Home: NextPage = () => {
         isMain={true}
         headTitle={`이제 스터디카페, 독서실의 거품이 빠질 때가 되었습니다.`}
       ></ContentLayout>
+      <KakaoDisplay>
+        <KakaoDisplayTitle>
+          클라이언트가 말하는 무인공간통합센터
+        </KakaoDisplayTitle>
+        <KakaoDisplayTitle2>
+          좋은 스터디카페 솔루션 업체를 찾는 단 한가지 방법은 리뷰를 보는
+          것입니다.
+        </KakaoDisplayTitle2>
+        <KakaoDisplayTitle3>
+          좋은 업체를 찾으실 때 업체에 가서 "여기가 괜찮은 곳인가요?"라고
+          물어본다면 모든 업체들이 괜찮은 곳이라고 말할 것입니다.
+          <br />
+          하지만 그런 방식으로는 좋은 업체를 찾을 수 없습니다.
+          <br />
+          좋은 업체를 찾으실 때는 후기를 보는게 정석입니다.
+        </KakaoDisplayTitle3>
+
+        <Image src='/comments.png' alt='카카오후기' width={800} height={800} />
+      </KakaoDisplay>
     </>
   );
 };
