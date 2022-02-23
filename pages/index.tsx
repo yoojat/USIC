@@ -81,41 +81,10 @@ const TryExperienceButton = styled.button`
 const Home: NextPage = () => {
   return (
     <>
-      {/* <HeadSection title='홈' isMain={true} /> */}
       <ContentLayout
         isMain={true}
         headTitle={`이제 스터디카페, 독서실의 거품이 빠질 때가 되었습니다.`}
-      >
-        <ContentWrapper>
-          <ContentContainer>
-            <TitleContainer>
-              <Title>
-                관리도 얼마든지
-                <br />
-                자유로워질 수 있습니다.
-              </Title>
-              <SubTitle></SubTitle>
-            </TitleContainer>
-            {/* <CountContainer>
-              <CountItem>
-                <CountTitle>컨설팅 상담건수</CountTitle>
-                <CountContent>300</CountContent>
-              </CountItem>
-              <CountItem>
-                <CountTitle>누적 응대 건수</CountTitle>
-                <CountContent>300</CountContent>
-              </CountItem>
-              <CountItem>
-                <CountTitle>누적 시스템 결제 건수</CountTitle>
-                <CountContent>300</CountContent>
-              </CountItem>
-            </CountContainer>
-            <TryExperienceButtonContainer>
-              <TryExperienceButton>USIC 컬럼 바로가기</TryExperienceButton>
-            </TryExperienceButtonContainer> */}
-          </ContentContainer>
-        </ContentWrapper>
-      </ContentLayout>
+      ></ContentLayout>
     </>
   );
 };

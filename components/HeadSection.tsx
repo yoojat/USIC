@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { media } from '../styles/theme';
@@ -84,12 +85,13 @@ const MainTitleContainer = styled.div`
   ${media.tablet} {
     width: 80%;
   }
+  /* margin-left: 30px; */
   ${media.pc} {
-    /* margin-left: 30px; */
-    position: absolute;
-    left: 5%;
-    top: 20%;
+    left: 10%;
   }
+  position: absolute;
+  left: 25%;
+  top: 20%;
 `;
 
 const TopDescription = styled.div`
@@ -173,6 +175,18 @@ const VideoContainer = styled.div`
       /* width = 100 / (9 / 16) = 177.777777 */
       width: 177.78vh;
     }
+  }
+`;
+const FreeConsultingButton = styled.button`
+  background-color: ${(props) => props.theme.color.mainBlue};
+  color: white;
+  padding: 15px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  &:hover {
+    background-color: ${(props) => props.theme.color.aBlue};
   }
 `;
 
@@ -303,6 +317,13 @@ export default function HeadSection({
                         <br />
                         후기와 무료 칼럼만으로 성공하실 수 있습니다.
                       </p>
+                      <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
+                        <a target='_blank'>
+                          <FreeConsultingButton>
+                            무료 상담하기
+                          </FreeConsultingButton>
+                        </a>
+                      </Link>
                     </BottomDescription>
                   </MainTitleContainer>
                 </VideoContainer>
