@@ -95,7 +95,7 @@ const MainTitleContainer = styled.div`
 `;
 
 const TopDescription = styled.div`
-  color: ${(props) => props.theme.color.aBlue};
+  color: white;
   font-size: 16px;
   font-weight: 500;
   padding-bottom: 10px;
@@ -181,7 +181,7 @@ const FreeConsultingButton = styled.button`
   background-color: ${(props) => props.theme.color.mainBlue};
   color: white;
   padding: 15px 20px;
-  margin-top: 10px;
+  margin-top: 35px;
   border-radius: 10px;
   font-weight: 600;
   font-size: 16px;
