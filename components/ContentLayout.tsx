@@ -21,7 +21,7 @@ interface IProps {
   bannerImgUrl?: string;
   headTitle?: string;
   subMenus?: { title: string; value: string }[];
-  children: React.ReactNode;
+  children?: React.ReactNode;
   nowSubPage?: string;
   setNowSubPage?: Dispatch<SetStateAction<string>>;
 }
