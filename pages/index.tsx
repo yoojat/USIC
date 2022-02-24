@@ -118,7 +118,7 @@ const Home: NextPage = () => {
           src='/comments.png'
           alt='카카오후기'
           width={800}
-          height={800}
+          height={1500}
           objectFit='contain'
         />
       </KakaoDisplay>
