@@ -95,7 +95,7 @@ const MainTitleContainer = styled.div`
   }
   position: absolute;
   left: 25%;
-  top: 20%;
+  top: 30%;
 `;
 
 const TopDescription = styled.div`
@@ -263,19 +263,11 @@ export default function HeadSection({
               <>
                 <MainTitleContainer>
                   <TopDescription>
-                    스터디카페, 독서실 창업 / 운영 / 관리 상담
+                    개인스터디카페, 독서실 창업/운영 솔루션 업체
                   </TopDescription>
                   <BigHeadTitle>{headTitle}</BigHeadTitle>
                   <BottomDescription>
-                    <p>
-                      저희가 제공하는 칼럼을 읽어보시지도 않고, <br />
-                      상담을 신청하는 분들은 거절 합니다.
-                    </p>
-                    <p>
-                      이곳을 찾는 많은 분들이
-                      <br />
-                      후기와 무료 칼럼만으로 성공하실 수 있습니다.
-                    </p>
+                    <p>불만족시 100% 환불 정책</p>
                   </BottomDescription>
                   <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
                     <a target='_blank'>

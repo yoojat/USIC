@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import getInquery from '@libs/client/getInquery';
 import moment from 'moment';
 import showdown from 'showdown';
+import { media } from 'styles/theme';
 
 const MainContentsWrapper = styled.div`
   font-weight: 300;
@@ -32,6 +33,14 @@ const PostTitle = styled.div`
     font-size: 28px;
     font-weight: 400;
   }
+  ${media.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+    h1 {
+      line-height: 1.2;
+      padding-bottom: 15px;
+    }
+  }
 `;
 
 const PostTitleRightSide = styled.div`
@@ -43,6 +52,7 @@ const PostTitleRightSide = styled.div`
 const PostDescription = styled.div`
   min-height: 500px;
   font-size: 18px;
+  line-height: 1.6;
   p {
     padding-top: 10px;
     padding-bottom: 10px;

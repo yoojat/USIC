@@ -62,7 +62,10 @@ const SubTitle = styled.h2`
   text-align: center;
 `;
 
-const ListSection = styled.section``;
+const ListSection = styled.section`
+  padding-left: 5%;
+  padding-right: 5%;
+`;
 
 const ListContainer = styled.div``;
 const ListItem = styled.div`
@@ -128,6 +131,9 @@ const ListRightSideContent = styled.div`
   margin-right: 30px;
   justify-content: center;
   align-items: center;
+  ${media.mobile} {
+    display: none;
+  }
 `;
 const ListContentAuthor = styled.div`
   padding-right: 10px;
@@ -153,27 +159,10 @@ const PageItem = styled.div`
   font-weight: 300;
 `;
 
-const WriteButtonContainer = styled.div`
-  text-align: right;
-  margin-top: 10px;
-`;
-const WriteButton = styled.button`
-  padding: 10px 20px;
-  background-color: ${(props) => props.theme.color.mainBlue};
-  color: white;
-  font-weight: 600;
-  border-radius: 15px;
-  cursor: pointer;
-  &:hover {
-    background-color: ${(props) => props.theme.color.secondBlue};
-  }
-`;
-
 const Inquery = ({ inqueries }: any) => {
   const [nowInqueries, setNowInqueries] = useState(inqueries);
   const onPageClick = async (page: number) => {
     const inqueries = await getInqueries(page);
-    console.log(inqueries);
     setNowInqueries(inqueries);
   };
   return (
