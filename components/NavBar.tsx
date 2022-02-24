@@ -14,6 +14,8 @@ const Wrapper = styled.div`
   overflow: hidden;
   width: 100%;
   position: absolute;
+  background-color: white;
+  z-index: 1000;
 `;
 const NavContainer = styled.nav`
   display: flex;
@@ -38,8 +40,6 @@ const MenuContainer = styled.div`
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
-
-  color: white;
   a {
     padding: 15px;
   }
@@ -51,7 +51,6 @@ const MenuTitle = styled.span<{ isNowPage?: boolean }>`
     text-shadow: none;
   }
   color: ${(props) => (props.isNowPage ? props.theme.color.aBlue : 'inherit')};
-  text-shadow: ${(props) => (props.isNowPage ? 'none' : '1px 1px 5px black')};
 `;
 
 const MenuBarContainer = styled.div`
@@ -180,6 +179,9 @@ export default function NavBar() {
           >
             <Link href='/services'>제공서비스</Link>
           </MenuTitle>
+          <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'inquery'}>
+            <Link href='/inquery'>이용 후기</Link>
+          </MenuTitle>
           {/* 
       <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'column'}>
             <Link href='/column'>칼럼</Link>
@@ -203,13 +205,9 @@ export default function NavBar() {
             <Link href={'/services'}>
               <SideMenuItem>제공서비스</SideMenuItem>
             </Link>
-            {/*
-           <Link href={'/column'}>
-              <SideMenuItem>칼럼</SideMenuItem>
+            <Link href={'/inquery'}>
+              <SideMenuItem>이용 후기</SideMenuItem>
             </Link>
-            <SideMenuItem>상담신청</SideMenuItem>
-            <SideMenuItem>후기</SideMenuItem>
-            <SideMenuItem>문의</SideMenuItem> */}
           </SideMenuNavContainer>
         </SideMenuContainer>
         <MenuBarContainer onClick={() => setIsSideMenuShow((prev) => !prev)}>

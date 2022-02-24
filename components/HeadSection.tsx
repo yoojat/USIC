@@ -7,7 +7,7 @@ import { media } from '../styles/theme';
 const BannerContainer = styled.div<{ isMain?: boolean }>`
   position: absolute;
   width: 100%;
-  height: ${(props) => (props.isMain ? '100vh' : '430px')};
+  height: ${(props) => (props.isMain ? '70vh' : '430px')};
   overflow: hidden;
 `;
 
@@ -36,7 +36,7 @@ const BannerImageContainer = styled.div<{
   position: relative;
   width: 100%;
   /* min-width: 900px; */
-  ${(props) => (props.isMain ? `height: 100vh;` : `height: 310px;`)}
+  ${(props) => (props.isMain ? `height: 70vh;` : `height: 310px;`)}
   img {
     ${media.tablet} {
       transform: translateX(-10%);
@@ -45,7 +45,7 @@ const BannerImageContainer = styled.div<{
   ${(props) =>
     props.bannerImgUrl
       ? `background-image: url(${props.bannerImgUrl})`
-      : `background: rgba(0,0,0,0.5) url(/main_banner.jpeg)`};
+      : `background: rgba(0,0,0,0.5) url(/main_banner.png)`};
   background-size: cover;
   background-blend-mode: darken;
   display: flex;
@@ -54,14 +54,14 @@ const BannerImageContainer = styled.div<{
   opacity: 1;
   background-position: 72% 75%;
 
-  ${(props) => props.isMain && `height: 100vh;`}
+  ${(props) => props.isMain && `height: 70vh;`}
 `;
 
 const HeadTitle = styled.h3`
   font-size: 28px;
   color: white;
   text-shadow: 2px 2px 5px black;
-  padding-top: 20px;
+  padding-top: 90px;
   @keyframes TitleAppear {
     0% {
       opacity: 0;
@@ -159,28 +159,7 @@ const SubMenuItem = styled.div<{ isNowPage?: boolean }>`
   padding-bottom: 20px;
   margin-top: 10px;
 `;
-const VideoContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
-  iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
 
-    @media (min-aspect-ratio: 16/9) {
-      /* height = 100 * (9 / 16) = 56.25 */
-      height: 56.25vw;
-    }
-    @media (max-aspect-ratio: 16/9) {
-      /* width = 100 / (9 / 16) = 177.777777 */
-      width: 177.78vh;
-    }
-  }
-`;
 const FreeConsultingButton = styled.button`
   background-color: ${(props) => props.theme.color.mainBlue};
   color: white;
@@ -193,8 +172,6 @@ const FreeConsultingButton = styled.button`
     background-color: ${(props) => props.theme.color.aBlue};
   }
 `;
-
-const CommentsContainer = styled.div``;
 
 interface IProps {
   title?: string;
@@ -283,68 +260,30 @@ export default function HeadSection({
         <BannerImageContainer bannerImgUrl={bannerImgUrl} isMain={isMain}>
           {headTitle &&
             (isMain ? (
-              isMobile ? (
-                <>
-                  <MainTitleContainer>
-                    <TopDescription>
-                      스터디카페, 독서실 창업 / 운영 / 관리 상담
-                    </TopDescription>
-                    <BigHeadTitle>{headTitle}</BigHeadTitle>
-                    <BottomDescription>
-                      <p>
-                        저희가 제공하는 칼럼을 읽어보시지도 않고, <br />
-                        상담을 신청하는 분들은 거절 합니다.
-                      </p>
-                      <p>
-                        이곳을 찾는 많은 분들이
-                        <br />
-                        후기와 무료 칼럼만으로 성공하실 수 있습니다.
-                      </p>
-                    </BottomDescription>
-                    <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
-                      <a target='_blank'>
-                        <FreeConsultingButton>
-                          무료 상담하기
-                        </FreeConsultingButton>
-                      </a>
-                    </Link>
-                  </MainTitleContainer>
-                </>
-              ) : (
-                <>
-                  <VideoContainer>
-                    <iframe
-                      src='https://www.youtube-nocookie.com/embed/HP_ZnEkbC7Y?controls=0&autoplay=1&mute=1&loop=1&playlist=HP_ZnEkbC7Y&showinfo=0'
-                      title='YouTube video player'
-                    ></iframe>
-
-                    <MainTitleContainer>
-                      <TopDescription>
-                        스터디카페, 독서실 창업 / 운영 / 관리 상담
-                      </TopDescription>
-                      <BigHeadTitle>{headTitle}</BigHeadTitle>
-                      <BottomDescription>
-                        <p>
-                          저희가 제공하는 칼럼을 읽어보시지도 않고, <br />
-                          상담을 신청하는 분들은 거절 합니다.
-                        </p>
-                        <p>
-                          이곳을 찾는 많은 분들이
-                          <br />
-                          후기와 무료 칼럼만으로 성공하실 수 있습니다.
-                        </p>
-                        <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
-                          <a target='_blank'>
-                            <FreeConsultingButton>
-                              무료 상담하기
-                            </FreeConsultingButton>
-                          </a>
-                        </Link>
-                      </BottomDescription>
-                    </MainTitleContainer>
-                  </VideoContainer>
-                </>
-              )
+              <>
+                <MainTitleContainer>
+                  <TopDescription>
+                    스터디카페, 독서실 창업 / 운영 / 관리 상담
+                  </TopDescription>
+                  <BigHeadTitle>{headTitle}</BigHeadTitle>
+                  <BottomDescription>
+                    <p>
+                      저희가 제공하는 칼럼을 읽어보시지도 않고, <br />
+                      상담을 신청하는 분들은 거절 합니다.
+                    </p>
+                    <p>
+                      이곳을 찾는 많은 분들이
+                      <br />
+                      후기와 무료 칼럼만으로 성공하실 수 있습니다.
+                    </p>
+                  </BottomDescription>
+                  <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
+                    <a target='_blank'>
+                      <FreeConsultingButton>무료 상담하기</FreeConsultingButton>
+                    </a>
+                  </Link>
+                </MainTitleContainer>
+              </>
             ) : (
               <HeadTitle>{headTitle}</HeadTitle>
             ))}

@@ -40,7 +40,7 @@ const ContentLayout = ({
     <div
       style={{
         backgroundColor: 'rgb(250, 250, 250)',
-        height: isMain ? '100vh' : 'inherit',
+        height: isMain ? '70vh' : 'inherit',
       }}
     >
       <HeadSection

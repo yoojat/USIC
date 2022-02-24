@@ -223,7 +223,7 @@ export default function Services() {
                   <ServiceItem
                     themeColor='#8661de'
                     category={'SOLUTION'}
-                    planTitle={'매장 관리'}
+                    planTitle={'응대 관리'}
                     planSubtitle={'고객이 늘어나는 응대가 중요합니다.'}
                     contents={[
                       {
