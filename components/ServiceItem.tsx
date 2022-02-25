@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import { media } from '../styles/theme';
 
@@ -90,6 +91,7 @@ const ConsultingButton = styled.button<{ themeColor?: string }>`
   &:hover {
     background-color: ${(props) => props.theme.color.thirdBlue};
   }
+  width: 100%;
 `;
 
 interface IProps {
@@ -129,7 +131,11 @@ const ServiceItem = ({
           </ContentItem>
         ))}
       </ContentItemsContainer>
-      <ConsultingButton themeColor={themeColor}>상담하기</ConsultingButton>
+      <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
+        <a target='_blank'>
+          <ConsultingButton themeColor={themeColor}>상담하기</ConsultingButton>
+        </a>
+      </Link>
     </BottomContentWrapper>
   </PlanItem>
 );
