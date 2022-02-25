@@ -61,6 +61,9 @@ const TextContainer = styled.div`
     color: rgb(80, 80, 80);
   }
   padding-bottom: 30px;
+  ${media.mobile} {
+    margin-top: 30px;
+  }
 `;
 
 const Divder = styled.div`

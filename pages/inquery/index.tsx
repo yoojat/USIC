@@ -46,6 +46,7 @@ const TopTitle = styled.h1`
   font-size: 32px;
   margin-bottom: 30px;
   text-align: center;
+  line-height: 1.5;
 
   br {
     display: none;
