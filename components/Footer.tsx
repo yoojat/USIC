@@ -8,7 +8,7 @@ const ContainerFooter = styled.footer`
 `;
 
 const FooterContentContainer = styled.div`
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
   align-items: flex-start;
 `;
@@ -44,11 +44,9 @@ const Footer: NextComponentType = () => {
           (주)크리플레이 ㅣ COPYRIGHT 2021.
           <br />
           CREPLAY ALL RIGHT RESERVED
-          <br /> 주소 : 부산 북구 양달로 4번길 11, 세흥빌딩 4층
+          <br /> 주소 : 부산 북구 양달로 4번길 11, 세흥빌딩 4층, 대표자 : 송병근
           <br />
-          대표자 : 송병근
-          <br />
-          사업자 등록 번호 : 617-86-24973
+          {/* 사업자 등록 번호 : 617-86-24973 */}
         </div>
       </FooterContentContainer>
     </ContainerFooter>
