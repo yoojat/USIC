@@ -54,8 +54,8 @@ const PostDescription = styled.div`
   font-size: 18px;
   line-height: 1.6;
   p {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 `;
 
