@@ -24,7 +24,6 @@ const NavContainer = styled.nav`
   width: 100%;
   padding: 20px;
   max-width: 1200px;
-  z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 `;
 
@@ -87,6 +86,7 @@ const SideMenuContainer = styled.div<{ isSideMenuShow: boolean }>`
   }
   ${media.tablet} {
     display: inherit;
+    z-index: 998;
   }
 `;
 
