@@ -1,6 +1,15 @@
 import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
+import { media } from 'styles/theme';
 import HeadSection from '../components/HeadSection';
+
+const HeadSectionContainer = styled.div<{ isMain?: boolean }>`
+  height: ${(props) => (props.isMain ? '70vh' : 'inherit')};
+  ${media.mobile} {
+    height: ${(props) => (props.isMain ? '80vh' : 'inherit')};
+  }
+  background-color: rgb(250, 250, 250);
+`;
 
 const ContentWrapper = styled.div<{ isMain?: boolean }>`
   /* position: absolute; */
@@ -37,12 +46,7 @@ const ContentLayout = ({
   setNowSubPage,
 }: IProps) => {
   return (
-    <div
-      style={{
-        backgroundColor: 'rgb(250, 250, 250)',
-        height: isMain ? '70vh' : 'inherit',
-      }}
-    >
+    <HeadSectionContainer isMain={isMain}>
       <HeadSection
         title={title}
         isMain={isMain}
@@ -53,7 +57,7 @@ const ContentLayout = ({
         setNowSubPage={setNowSubPage}
       />
       <ContentWrapper isMain={isMain}>{children}</ContentWrapper>
-    </div>
+    </HeadSectionContainer>
   );
 };
 

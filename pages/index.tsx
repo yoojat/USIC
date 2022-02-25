@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { media } from 'styles/theme';
 import ContentLayout from '../components/ContentLayout';
 
 const KakaoDisplay = styled.div`
@@ -27,8 +28,17 @@ const ProudOfMyselfContainer = styled.div`
 `;
 const ProudOfMyselfItem = styled.div`
   width: 250px;
+  ${media.mobile} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
-const ProudOfMyselfIcon = styled.div``;
+const ProudOfMyselfIcon = styled.div`
+  ${media.mobile} {
+    width: 60px;
+  }
+`;
 const ProudOfMyselfTitle = styled.div`
   font-size: 14px;
   padding-top: 10px;
@@ -38,11 +48,17 @@ const KakaoDisplayTitle = styled.h1`
   font-size: 45px;
   font-weight: 600;
   margin-bottom: 80px;
+  ${media.mobile} {
+    font-size: 32px;
+  }
 `;
 const KakaoDisplayTitle2 = styled.h2`
   font-size: 30px;
   font-weight: 500;
   margin-bottom: 100px;
+  ${media.mobile} {
+    font-size: 26px;
+  }
 `;
 const KakaoDisplayTitle3 = styled.h3`
   font-size: 16px;

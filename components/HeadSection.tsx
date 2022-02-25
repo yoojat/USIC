@@ -8,6 +8,9 @@ const BannerContainer = styled.div<{ isMain?: boolean }>`
   position: absolute;
   width: 100%;
   height: ${(props) => (props.isMain ? '70vh' : '430px')};
+  ${media.mobile} {
+    height: ${(props) => (props.isMain ? '80vh' : '430px')};
+  }
   overflow: hidden;
 `;
 
@@ -17,7 +20,7 @@ const BannerImageContainer = styled.div<{
 }>`
   ${(props) =>
     !props.isMain
-      ? `  @keyframes background_move {
+      ? `@keyframes background_move {
     0% {
       background-position: center;
     }
@@ -31,7 +34,7 @@ const BannerImageContainer = styled.div<{
   animation-duration: 60s;
   animation-name: background_move;
   animation-iteration-count: infinite;`
-      : ``};
+      : ''};
 
   position: relative;
   width: 100%;
@@ -55,6 +58,9 @@ const BannerImageContainer = styled.div<{
   background-position: 72% 75%;
 
   ${(props) => props.isMain && `height: 70vh;`}
+  ${media.mobile} {
+    ${(props) => props.isMain && `height: 100vh;`}
+  }
 `;
 
 const HeadTitle = styled.h3`
@@ -90,7 +96,7 @@ const MainTitleContainer = styled.div`
     left: 10%;
   }
   ${media.mobile} {
-    top: 15%;
+    top: 18%;
     left: 5%;
   }
   position: absolute;
@@ -102,7 +108,8 @@ const TopDescription = styled.div`
   color: white;
   font-size: 16px;
   font-weight: 500;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  line-height: 1.3;
 `;
 
 const BottomDescription = styled.div`
@@ -125,7 +132,7 @@ const BigHeadTitle = styled.h1`
   font-size: 34px;
   font-weight: 400;
   color: white;
-  line-height: 1.3;
+  line-height: 1.4;
   width: 100%;
 `;
 
@@ -160,8 +167,11 @@ const SubMenuItem = styled.div<{ isNowPage?: boolean }>`
   margin-top: 10px;
 `;
 
-const FreeConsultingButton = styled.button`
-  background-color: ${(props) => props.theme.color.mainBlue};
+const FreeConsultingButtonContainer = styled.div``;
+
+const FreeConsultingButton = styled.button<{ backgroundColor?: string }>`
+  background-color: ${(props) =>
+    props.backgroundColor || props.theme.color.mainBlue};
   color: white;
   padding: 15px 20px;
   margin-top: 35px;
@@ -171,6 +181,8 @@ const FreeConsultingButton = styled.button`
   &:hover {
     background-color: ${(props) => props.theme.color.aBlue};
   }
+  margin-right: 10px;
+  width: 140px;
 `;
 
 interface IProps {
@@ -269,11 +281,22 @@ export default function HeadSection({
                   <BottomDescription>
                     <p>불만족시 100% 환불 정책</p>
                   </BottomDescription>
-                  <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
-                    <a target='_blank'>
-                      <FreeConsultingButton>무료 상담하기</FreeConsultingButton>
-                    </a>
-                  </Link>
+                  <FreeConsultingButtonContainer>
+                    <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
+                      <a target='_blank'>
+                        <FreeConsultingButton>
+                          무료 상담하기
+                        </FreeConsultingButton>
+                      </a>
+                    </Link>
+                    <Link href='https://blog.naver.com/creplay3'>
+                      <a target='_blank'>
+                        <FreeConsultingButton backgroundColor={'#03c75a'}>
+                          무료 칼럼 보기
+                        </FreeConsultingButton>
+                      </a>
+                    </Link>
+                  </FreeConsultingButtonContainer>
                 </MainTitleContainer>
               </>
             ) : (
