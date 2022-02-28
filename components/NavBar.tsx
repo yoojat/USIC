@@ -215,7 +215,7 @@ export default function NavBar() {
             >
               <SideMenuItem>- 운영자 소개</SideMenuItem>
             </Link>
-            <Link href={'/services'}>
+            <Link href={'/services/CONSULTING'}>
               <SideMenuItem>제공서비스</SideMenuItem>
             </Link>
             <Link
