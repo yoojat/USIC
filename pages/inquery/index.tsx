@@ -201,7 +201,7 @@ const Inquery = ({ inqueries }: any) => {
                           {inquery.node.author}
                         </ListContentAuthor>
                         <ListContentDatetime>
-                          {moment(inquery.node.createdAt)
+                          {moment(inquery.node.writtenTime)
                             .locale('ko')
                             .format('YYYY-MM-DD HH:MM')}
                         </ListContentDatetime>
@@ -253,6 +253,7 @@ export async function getStaticProps() {
           title
           author
           state
+          writtenTime
           updatedAt
         }
       }

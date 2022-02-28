@@ -20,6 +20,11 @@ const PostContainer = styled.div`
   border: 1px solid #dedede;
   padding: 50px;
   margin-bottom: 100px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const PostTitle = styled.div`
   border-bottom: 1px solid #dedede;
@@ -73,7 +78,7 @@ const InqueryDetail = ({ inquery }: any) => {
                 {inquery.inquery.author}
               </span>
               <span>
-                {moment(inquery.inquery.createdAt)
+                {moment(inquery.inquery.writtenTime)
                   .locale('ko')
                   .format('YYYY-MM-DD HH:MM')}
               </span>

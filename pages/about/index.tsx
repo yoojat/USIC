@@ -187,7 +187,7 @@ export default function Usic() {
           <MainContentContainer>
             <PhotoContainer>
               <Image
-                src='/professional.jpg'
+                src='/professional.jpeg'
                 objectFit='contain'
                 width='500'
                 height='300'

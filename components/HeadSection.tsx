@@ -190,6 +190,7 @@ interface IProps {
   isMain?: boolean;
   bannerImgUrl?: string;
   headTitle?: string;
+  headTitles?: string[];
   subMenus?: { title: string; value: string }[];
   topDescription?: string;
   nowSubPage?: string;
@@ -201,6 +202,7 @@ export default function HeadSection({
   bannerImgUrl,
   isMain = false,
   headTitle,
+  headTitles,
   subMenus,
   topDescription,
   nowSubPage,
@@ -270,14 +272,20 @@ export default function HeadSection({
       </Head>
       <BannerContainer isMain={isMain}>
         <BannerImageContainer bannerImgUrl={bannerImgUrl} isMain={isMain}>
-          {headTitle &&
+          {(headTitle || headTitles) &&
             (isMain ? (
               <>
                 <MainTitleContainer>
                   <TopDescription>
                     개인스터디카페, 독서실 창업/운영 솔루션 업체
                   </TopDescription>
-                  <BigHeadTitle>{headTitle}</BigHeadTitle>
+                  <BigHeadTitle>
+                    {headTitles
+                      ? headTitles.map((headTitle, index) => (
+                          <p key={index}>{headTitle}</p>
+                        ))
+                      : headTitle}
+                  </BigHeadTitle>
                   <BottomDescription>
                     <p>불만족시 100% 환불 정책</p>
                   </BottomDescription>

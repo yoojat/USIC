@@ -71,7 +71,7 @@ const Home: NextPage = () => {
     <>
       <ContentLayout
         isMain={true}
-        headTitle={`아직도 비싼 돈 주고 스터디카페 창업하세요?`}
+        headTitles={['아직도', '비싼 돈 내며', '스터디카페 창업하세요?']}
       ></ContentLayout>
       <KakaoDisplay>
         <ProudOfMyselfContainer>

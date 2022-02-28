@@ -73,8 +73,8 @@ const MenuBarContainer = styled.div`
 `;
 
 const SideMenuContainer = styled.div<{ isSideMenuShow: boolean }>`
-  background-color: ${(props) => props.theme.color.aBlue};
-  left: ${(props) => (props.isSideMenuShow ? 0 : '-100%')};
+  background-color: black;
+  left: ${(props) => (props.isSideMenuShow ? '30%' : '200%')};
   opacity: ${(props) => (props.isSideMenuShow ? 1 : 0)};
   top: 0;
   width: 100%;

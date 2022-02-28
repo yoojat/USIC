@@ -29,6 +29,7 @@ interface IProps {
   isMain?: boolean;
   bannerImgUrl?: string;
   headTitle?: string;
+  headTitles?: string[];
   subMenus?: { title: string; value: string }[];
   children?: React.ReactNode;
   nowSubPage?: string;
@@ -40,6 +41,7 @@ const ContentLayout = ({
   isMain,
   bannerImgUrl,
   headTitle,
+  headTitles,
   subMenus,
   children,
   nowSubPage,
@@ -51,6 +53,7 @@ const ContentLayout = ({
         title={title}
         isMain={isMain}
         bannerImgUrl={bannerImgUrl}
+        headTitles={headTitles}
         headTitle={headTitle}
         subMenus={subMenus}
         nowSubPage={nowSubPage}
