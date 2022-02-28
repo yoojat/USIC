@@ -171,13 +171,13 @@ export default function NavBar() {
         </ImageContainer>
         <MenuContainer>
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'about'}>
-            <Link href='/about'>센터 소개</Link>
+            <Link href='/about/COMPANY'>센터 소개</Link>
           </MenuTitle>
 
           <MenuTitle
             isNowPage={firstPathFinder(router.pathname) === 'services'}
           >
-            <Link href='/services'>제공서비스</Link>
+            <Link href='/services/CONSULTING'>제공서비스</Link>
           </MenuTitle>
           <MenuTitle isNowPage={firstPathFinder(router.pathname) === 'inquery'}>
             <Link href='/inquery'>이용 후기</Link>
@@ -198,12 +198,41 @@ export default function NavBar() {
         </MenuContainer>
         <SideMenuContainer isSideMenuShow={isSideMenuShow}>
           <SideMenuNavContainer>
-            <Link href={'/about'}>
+            <Link href={'/about/COMPANY'}>
               <SideMenuItem>센터 소개</SideMenuItem>
             </Link>
-
+            <Link
+              href={{
+                pathname: '/about/COMPANY',
+              }}
+            >
+              <SideMenuItem>- 무인공간통합센터 소개</SideMenuItem>
+            </Link>
+            <Link
+              href={{
+                pathname: '/about/OPERATORS',
+              }}
+            >
+              <SideMenuItem>- 운영자 소개</SideMenuItem>
+            </Link>
             <Link href={'/services'}>
               <SideMenuItem>제공서비스</SideMenuItem>
+            </Link>
+            <Link
+              href={{
+                pathname: '/services/CONSULTING',
+              }}
+              replace
+            >
+              <SideMenuItem>- 컨설팅</SideMenuItem>
+            </Link>
+            <Link
+              href={{
+                pathname: '/services/SOLUTION',
+              }}
+              replace
+            >
+              <SideMenuItem>- 솔루션</SideMenuItem>
             </Link>
             <Link href={'/inquery'}>
               <SideMenuItem>이용 후기</SideMenuItem>

@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ArrowIcon from '../../components/ArrowIcon';
 import HeadSection from '../../components/HeadSection';
@@ -167,8 +168,19 @@ const OperatorContext = styled.div`
 `;
 
 export default function Usic() {
+  const router = useRouter();
+  const {
+    query: { state },
+  } = router;
   const [nowSubPage, setNowSubPage] = useState(COMPANY);
   const [nowOperator, setNowOperator] = useState('송병근');
+
+  useEffect(() => {
+    if (state && typeof state === 'string') {
+      setNowSubPage(state);
+    }
+  }, [state]);
+
   return (
     <div>
       <HeadSection

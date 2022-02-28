@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ContentLayout from '../../components/ContentLayout';
 import ServiceItem from '../../components/ServiceItem';
@@ -67,7 +68,17 @@ const PlanContainer = styled.div`
 `;
 
 export default function Services() {
+  const router = useRouter();
   const [nowSubPage, setNowSubPage] = useState(CONSULTING);
+  const {
+    query: { state },
+  } = router;
+
+  useEffect(() => {
+    if (state && typeof state === 'string') {
+      setNowSubPage(state);
+    }
+  }, [state]);
 
   return (
     <ContentLayout

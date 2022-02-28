@@ -8,7 +8,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { media } from 'styles/theme';
 
-const UNITS_PER_PAGE = 5;
+const UNITS_PER_PAGE = 8;
 
 const MainContentsWrapper = styled.div`
   font-weight: 300;

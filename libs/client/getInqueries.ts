@@ -1,5 +1,5 @@
 import client from '@libs/server/client';
-const UNITS_PER_PAGE = 5;
+const UNITS_PER_PAGE = 8;
 export default async function (page: number) {
   return await client.request(`
   {
@@ -16,6 +16,7 @@ export default async function (page: number) {
           phone
           email
           address
+          writtenTime
           categories{
             id
             service
