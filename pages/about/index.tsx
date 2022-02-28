@@ -53,7 +53,7 @@ const TextContainer = styled.div`
     margin-bottom: 60px;
   }
   p {
-    font-size: 17px;
+    font-size: 21px;
     line-height: 1.55;
     font-weight: 400;
     padding-top: 10px;
