@@ -8,6 +8,7 @@ const BannerContainer = styled.div<{ isMain?: boolean }>`
   position: absolute;
   width: 100%;
   height: ${(props) => (props.isMain ? '70vh' : '430px')};
+  min-height: ${(props) => (props.isMain ? '700px' : 'inherit')};
   ${media.mobile} {
     height: ${(props) => (props.isMain ? '80vh' : '430px')};
   }
@@ -39,7 +40,8 @@ const BannerImageContainer = styled.div<{
   position: relative;
   width: 100%;
   /* min-width: 900px; */
-  ${(props) => (props.isMain ? `height: 70vh;` : `height: 310px;`)}
+  ${(props) =>
+    props.isMain ? `height: 70vh; min-height: 700px;` : `height: 310px;`}
   img {
     ${media.tablet} {
       transform: translateX(-10%);
@@ -57,7 +59,6 @@ const BannerImageContainer = styled.div<{
   opacity: 1;
   background-position: 72% 75%;
 
-  ${(props) => props.isMain && `height: 70vh;`}
   ${media.mobile} {
     ${(props) => props.isMain && `height: 100vh;`}
   }

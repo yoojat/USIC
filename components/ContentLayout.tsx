@@ -5,6 +5,8 @@ import HeadSection from '../components/HeadSection';
 
 const HeadSectionContainer = styled.div<{ isMain?: boolean }>`
   height: ${(props) => (props.isMain ? '70vh' : 'inherit')};
+  min-height: ${(props) => (props.isMain ? '700px' : 'inherit')};
+
   ${media.mobile} {
     height: ${(props) => (props.isMain ? '80vh' : 'inherit')};
   }
