@@ -298,7 +298,7 @@ export default function HeadSection({
                         </FreeConsultingButton>
                       </a>
                     </Link>
-                    <Link href='https://blog.naver.com/creplay3'>
+                    <Link href='https://blog.naver.com/creplay-dev'>
                       <a target='_blank'>
                         <FreeConsultingButton backgroundColor={'#03c75a'}>
                           무료 칼럼 보기
