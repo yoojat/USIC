@@ -203,7 +203,7 @@ const Inquery = ({ inqueries }: any) => {
                         <ListContentDatetime>
                           {moment(inquery.node.writtenTime)
                             .locale('ko')
-                            .format('YYYY-MM-DD HH:MM')}
+                            .format('YYYY-MM-DD')}
                         </ListContentDatetime>
                       </ListRightSideContent>
                     </ListContent>

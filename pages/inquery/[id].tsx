@@ -80,7 +80,7 @@ const InqueryDetail = ({ inquery }: any) => {
               <span>
                 {moment(inquery.inquery.writtenTime)
                   .locale('ko')
-                  .format('YYYY-MM-DD HH:MM')}
+                  .format('YYYY-MM-DD')}
               </span>
             </PostTitleRightSide>
           </PostTitle>
