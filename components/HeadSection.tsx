@@ -123,18 +123,25 @@ const BottomDescription = styled.div`
   }
 `;
 
-const BigHeadTitle = styled.h1`
+const BigHeadTitle = styled.div`
   ${media.pc} {
     width: 400px;
   }
   ${media.tablet} {
     width: inherit;
   }
+  ${media.mobile} {
+    font-size: 24px;
+  }
   font-size: 34px;
   font-weight: 400;
   color: white;
   line-height: 1.4;
   width: 100%;
+  p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 `;
 
 const SubMenuContainer = styled.div`
