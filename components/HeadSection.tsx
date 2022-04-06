@@ -102,7 +102,7 @@ const MainTitleContainer = styled.div`
   }
   position: absolute;
   left: 25%;
-  top: 30%;
+  top: 20%;
 `;
 
 const TopDescription = styled.div`
@@ -295,7 +295,7 @@ export default function HeadSection({
                       : headTitle}
                   </BigHeadTitle>
                   <BottomDescription>
-                    <p>불만족시 100% 환불 정책</p>
+                    {/* <p>불만족시 100% 환불 정책</p> */}
                   </BottomDescription>
                   <FreeConsultingButtonContainer>
                     <Link href='https://forms.gle/mS2THJcdm1ciJNtR9'>
